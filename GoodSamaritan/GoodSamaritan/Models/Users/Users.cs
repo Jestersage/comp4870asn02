@@ -7,10 +7,10 @@ using System.Web;
 
 namespace GoodSamaritan.Models
 {
-    public class Users
+    public class User
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UsersId { get; set; }
+        public int UserId { get; set; }
 
         public string Email { get; set; }
 
