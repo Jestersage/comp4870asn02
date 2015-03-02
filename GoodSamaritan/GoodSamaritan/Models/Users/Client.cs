@@ -11,5 +11,7 @@ namespace GoodSamaritan.Models.Users
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClientID { get; set; }
+
+
     }
 }
