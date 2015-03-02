@@ -9,12 +9,12 @@ namespace GoodSamaritan.Models.Users
     public class UsersContext:DbContext
     {
         public UsersContext() : base("DefaultConnection")
-        {
-            public DbSet<Client> Clients{get; set;}
+        {}
+        public DbSet<Client> Clients{get; set;}
 
-            public DbSet<User> Users {get; set;}
+        public DbSet<User> Users {get; set;}
 
-        }
+        
 
 
     }
