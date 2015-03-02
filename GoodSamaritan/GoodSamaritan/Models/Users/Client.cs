@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models.Users
     public class Client
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ClientID { get; set; }
+        public int ClientId { get; set; }
 
 
     }
