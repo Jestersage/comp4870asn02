@@ -26,6 +26,7 @@ namespace GoodSamaritan.Models.Client
         public int SWCFileNum { get; set; }
 
         public RiskLevel RiskLevel { get; set; }
+        public Crisis Crisis { get; set; }
         //Crisis LOOKUP
         //Service LOOKUP
         //Program LOOKUP
