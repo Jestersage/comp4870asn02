@@ -30,7 +30,7 @@ namespace GoodSamaritan.Models.Client
         //Service LOOKUP
         //Program LOOKUP
 
-        //string RiskAccessmentAssignedTo
+        public string RiskAccessmentAssignedTo{ get; set; }
 
         //RiskStatus LOOKUP
         //AssignedWork LOOKUP
@@ -38,19 +38,19 @@ namespace GoodSamaritan.Models.Client
         //ReferralContact LOOKUP
         
         //Incident LOOKUP
-        //string AbuserSurname
-        //string AbuserFirstName
+        public string AbuserSurname { get; set; }
+        public string AbuserFirstName { get; set; }
         //AbuserRelationship LOOKUP
         //VictimOfIncident  LOOKUP
         //FamilyViolenceFile  LOOKUP
-        //char Gender //(M, F, Trans)
+        //char Gender //(M, F, Trans) Lookup too??
         //Ethnicity LOOKUP
         //Age LOOKUP
         //RepeatClient LOOKUP //Yes or null. Need to check if same fiscal year
         //DuplicateFile LOOKUP //Yes or null. Need to check if same fiscal year
         public int NumChildrenAgeZeroSix { get; set; }
         public int NumChildrenAgeSevenTweleve { get; set; }
-        //int NumChildrenAgeTeens 
+        public int NumChildrenAgeTeens { get; set; }
         //FileStatus LOOKUP //Reopen; Closed; Open
         //DateTime DateLastTransfer 
         //DateTime DateClosed
