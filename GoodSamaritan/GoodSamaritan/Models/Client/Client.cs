@@ -29,7 +29,8 @@ namespace GoodSamaritan.Models.Client
         public Crisis Crisis { get; set; }
 
         public Service Serivce { get; set; }
-        //Program LOOKUP
+        //Program If Program == SMART, refer to smart.
+        public Program Program { get; set; }
 
         public string RiskAccessmentAssignedTo{ get; set; }
 
