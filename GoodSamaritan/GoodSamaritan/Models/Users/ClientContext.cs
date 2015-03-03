@@ -6,9 +6,9 @@ using System.Web;
 
 namespace GoodSamaritan.Models.Users
 {
-    public class UsersContext:DbContext
+    public class ClientContext:DbContext
     {
-        public UsersContext() : base("DefaultConnection")
+        public ClientContext() : base("DefaultConnection")
         {}
         public DbSet<Client> Clients{get; set;}
 

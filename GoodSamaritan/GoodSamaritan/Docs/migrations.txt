@@ -1,0 +1,3 @@
+﻿enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations\ClientMigrations
+
+add-migration -ConfigurationTypeName GoodSamarithan.Migrations.ClientMigrations.Configuration "InitialCreate"

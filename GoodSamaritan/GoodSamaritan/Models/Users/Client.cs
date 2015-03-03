@@ -26,7 +26,14 @@ namespace GoodSamaritan.Models.Users
         //Crisis LOOKUP
         //Service LOOKUP
         //Program LOOKUP
-        //RiskAccessmentAssignedTo LOOKUP
+
+        //string RiskAccessmentAssignedTo
+
+        //RiskStatus LOOKUP
+        //AssignedWork LOOKUP
+        //ReferralSource LOOKUP
+        //ReferralContact LOOKUP
+        //Incident LOOKUP
 
     }
 }
