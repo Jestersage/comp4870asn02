@@ -12,9 +12,9 @@ namespace GoodSamaritan.Models.Client
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClientId { get; set; }
 
-        //FiscalYear Lookup
-        //int Month
-        //int Day
+        public FiscalYear FiscalYear { get; set; }
+        public int Month { get; set; }
+        public int Day { get; set; }
         public string Surname { get; set; }
         public string FirstName { get; set; }
 
@@ -25,7 +25,7 @@ namespace GoodSamaritan.Models.Client
         public int CourtFileNum { get; set; }
         public int SWCFileNum { get; set; }
 
-        //RiskLevel LOOKUP
+        public RiskLevel RiskLevel { get; set; }
         //Crisis LOOKUP
         //Service LOOKUP
         //Program LOOKUP
@@ -52,8 +52,8 @@ namespace GoodSamaritan.Models.Client
         public int NumChildrenAgeSevenTweleve { get; set; }
         public int NumChildrenAgeTeens { get; set; }
         //FileStatus LOOKUP //Reopen; Closed; Open
-        //DateTime DateLastTransfer 
-        //DateTime DateClosed
-        //DateTime DateReopened
+        public DateTime DateLastTransfer { get; set; }
+        public DateTime DateClosed { get; set; }
+        public DateTime DateReopened { get; set; }
     }
 }
