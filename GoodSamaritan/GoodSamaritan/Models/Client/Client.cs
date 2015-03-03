@@ -27,8 +27,8 @@ namespace GoodSamaritan.Models.Client
 
         public RiskLevel RiskLevel { get; set; }
         public Crisis Crisis { get; set; }
-        //Crisis LOOKUP
-        //Service LOOKUP
+
+        public Service Serivce { get; set; }
         //Program LOOKUP
 
         public string RiskAccessmentAssignedTo{ get; set; }

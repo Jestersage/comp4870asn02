@@ -165,8 +165,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Client\Crisis.cs" />
     <Compile Include="Models\Client\FiscalYear.cs" />
     <Compile Include="Models\Client\RiskLevel.cs" />
+    <Compile Include="Models\Client\Service.cs" />
     <Compile Include="Models\Smart\City.cs" />
     <Compile Include="Models\Smart\Hospital.cs" />
     <Compile Include="Models\Smart\Smart.cs" />
