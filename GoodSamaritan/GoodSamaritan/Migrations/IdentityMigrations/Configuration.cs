@@ -15,7 +15,7 @@ namespace GoodSamaritan.Migrations.IdentityMigrations
             MigrationsDirectory = @"Migrations\IdentityMigrations";
         }
 
-        protected override void Seed(GoodSamaritan.Models.ApplicationDbContext context)
+        protected override void Seed(GoodSamaritan.Models.Client.ClientContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -41,7 +41,7 @@ namespace GoodSamaritan.Migrations.IdentityMigrations
 
             context.Clients.AddOrUpdate(
                 c => c.ClientId,
-                clients.ToArray()
+                Clients.ToArray()
             );
 
             List<FiscalYear> FiscalYears = new List<FiscalYear>() {
@@ -61,7 +61,7 @@ namespace GoodSamaritan.Migrations.IdentityMigrations
 
             context.Clients.AddOrUpdate(
                 c => c.ClientId,
-                clients.ToArray()
+                Clients.ToArray()
             );
 
 
