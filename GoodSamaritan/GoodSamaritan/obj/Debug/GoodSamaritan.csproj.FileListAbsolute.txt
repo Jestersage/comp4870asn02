@@ -54,4 +54,3 @@ C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\obj\D
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\obj\Debug\GoodSamaritan.pdb
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\obj\Debug\GoodSamaritan.Migrations.ClientMigrations.InitialCreate.resources
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\obj\Debug\GoodSamaritan.csproj.GenerateResource.Cache
-C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\obj\Debug\GoodSamaritan.csprojResolveAssemblyReference.cache
