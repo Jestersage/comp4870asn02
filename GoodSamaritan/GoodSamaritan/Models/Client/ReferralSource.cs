@@ -7,5 +7,7 @@ namespace GoodSamaritan.Models.Client
 {
     public class ReferralSource
     {
+        public int ReferralSourceId { get; set; }
+        public string Source { get; set; }
     }
 }

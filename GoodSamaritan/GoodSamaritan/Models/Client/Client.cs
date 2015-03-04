@@ -46,24 +46,27 @@ namespace GoodSamaritan.Models.Client
         public string AbuserSurname { get; set; }
         public string AbuserFirstName { get; set; }
         public AbuserRelationship Relationship { get; set; }
-        //VictimOfIncident  LOOKUP
+        
         public Victim VictimOfIncident { get; set; }
-        //FamilyViolenceFile  LOOKUP
+        
         public FamilyViolenceFile File {get; set;}
         //char Gender //(M, F, Trans) Lookup too??
         public char Gender { get; set; }
-        //Ethnicity LOOKUP
+        
         public Ethnicity Race {get;set;}
-        //Age LOOKUP
+        
         public Age age { get; set; }
-        //RepeatClient LOOKUP //Yes or null. Need to check if same fiscal year
+       
+        //Yes or null. Need to check if same fiscal year
         public RepeatClient Repeat { get; set; }
-        //DuplicateFile LOOKUP //Yes or null. Need to check if same fiscal year
+        
+        //Yes or null. Need to check if same fiscal year
         public DuplicateFile DuplicateFile { get; set; }
         public int NumChildrenAgeZeroSix { get; set; }
         public int NumChildrenAgeSevenTweleve { get; set; }
         public int NumChildrenAgeTeens { get; set; }
-        //FileStatus LOOKUP //Reopen; Closed; Open
+       
+        //Reopen; Closed; Open
         public FileStatus FileStatuse { get; set; }
         public DateTime DateLastTransfer { get; set; }
         public DateTime DateClosed { get; set; }
