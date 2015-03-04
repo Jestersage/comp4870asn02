@@ -29,31 +29,42 @@ namespace GoodSamaritan.Models.Client
         public Crisis Crisis { get; set; }
 
         public Service Serivce { get; set; }
+
         //Program If Program == SMART, refer to smart.
         public Program Program { get; set; }
 
         public string RiskAccessmentAssignedTo{ get; set; }
 
-        //RiskStatus LOOKUP
-        //AssignedWork LOOKUP
-        //ReferralSource LOOKUP
-        //ReferralContact LOOKUP
-        
-        //Incident LOOKUP
+        public RiskStatus RiskStatus { get; set; }
+
+        public AssignedWorker AssignedWorker { get; set; }
+
+        public ReferralSource ReferralSource { get; set; }
+        public ReferralContact ReferralContact { get; set; }
+
+        public Incident Incident { get; set; }
         public string AbuserSurname { get; set; }
         public string AbuserFirstName { get; set; }
-        //AbuserRelationship LOOKUP
+        public AbuserRelationship Relationship { get; set; }
         //VictimOfIncident  LOOKUP
+        public Victim VictimOfIncident { get; set; }
         //FamilyViolenceFile  LOOKUP
+        public FamilyViolenceFile File {get; set;}
         //char Gender //(M, F, Trans) Lookup too??
+        public char Gender { get; set; }
         //Ethnicity LOOKUP
+        public Ethnicity Race {get;set;}
         //Age LOOKUP
+        public Age age { get; set; }
         //RepeatClient LOOKUP //Yes or null. Need to check if same fiscal year
+        public RepeatClient Repeat { get; set; }
         //DuplicateFile LOOKUP //Yes or null. Need to check if same fiscal year
+        public DuplicateFile DuplicateFile { get; set; }
         public int NumChildrenAgeZeroSix { get; set; }
         public int NumChildrenAgeSevenTweleve { get; set; }
         public int NumChildrenAgeTeens { get; set; }
         //FileStatus LOOKUP //Reopen; Closed; Open
+        public FileStatus FileStatuse { get; set; }
         public DateTime DateLastTransfer { get; set; }
         public DateTime DateClosed { get; set; }
         public DateTime DateReopened { get; set; }
