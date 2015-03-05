@@ -59,9 +59,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 },
               };
 
-            context.Clients.AddOrUpdate(
-                c => c.ClientId,
-                Clients.ToArray()
+            context.FiscalYears.AddOrUpdate(
+                f => f.FiscalYearId,
+                FiscalYears.ToArray()
             );
 
 
