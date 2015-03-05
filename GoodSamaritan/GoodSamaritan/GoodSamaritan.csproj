@@ -208,8 +208,17 @@
     <Compile Include="Models\Client\RiskStatus.cs" />
     <Compile Include="Models\Client\Service.cs" />
     <Compile Include="Models\Client\Victim.cs" />
+    <Compile Include="Models\Smart\BadDateReport.cs" />
     <Compile Include="Models\Smart\City.cs" />
+    <Compile Include="Models\Smart\DrugFacilitatedAssault.cs" />
+    <Compile Include="Models\Smart\EvidenceStored.cs" />
+    <Compile Include="Models\Smart\HIVMeds.cs" />
     <Compile Include="Models\Smart\Hospital.cs" />
+    <Compile Include="Models\Smart\MedicalOnly.cs" />
+    <Compile Include="Models\Smart\MultiplePerpetrator.cs" />
+    <Compile Include="Models\Smart\PoliceAttendance.cs" />
+    <Compile Include="Models\Smart\PoliceReported.cs" />
+    <Compile Include="Models\Smart\ReferCBVS.cs" />
     <Compile Include="Models\Smart\SexWorkExploitation.cs" />
     <Compile Include="Models\Smart\Smart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -217,6 +226,9 @@
     <Compile Include="Models\Client\Client.cs" />
     <Compile Include="Models\Client\ClientContext.cs" />
     <Compile Include="Models\Client\Users.cs" />
+    <Compile Include="Models\Smart\SocialWorkAttendance.cs" />
+    <Compile Include="Models\Smart\ThirdPartyReport.cs" />
+    <Compile Include="Models\Smart\VictimServicesAttendance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
