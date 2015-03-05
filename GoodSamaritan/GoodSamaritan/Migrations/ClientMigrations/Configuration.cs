@@ -1,6 +1,7 @@
 namespace GoodSamaritan.Migrations.ClientMigrations
 {
     using GoodSamaritan.Models.Client;
+    using GoodSamaritan.Models.Smart;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -64,6 +65,12 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 FiscalYears.ToArray()
             );
 
+            context.BadDateReports.AddOrUpdate(
+                  bd => bd.Value,
+                  new BadDateReport { Value = "Yes" },
+                  new BadDateReport { Value = "No" },
+                  new BadDateReport { Value = "N/A" }
+            );
 
         }
     }
