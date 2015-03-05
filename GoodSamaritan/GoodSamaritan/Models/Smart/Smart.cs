@@ -10,24 +10,25 @@ namespace GoodSamaritan.Models.Smart
         //Foreign Key to Client
         public int ClientId { get; set; }
 
-        //SexWorkExploitation LOOKUP //Yes, No, N/A
-        //MultiplePerpetrators LOOKUP //Yes. No N/A
-        //DrugFacilitatedAssault Lookup //Yes No N/A
+        public SexWorkExploitation Exploitation { get; set; } //Yes, No, N/A
+        public MultiplePerpetrator MultiPerp {get;set;} //Yes. No N/A
+        public DrugFacilitatedAssault DrugAssault { get; set; } //Yes No N/A
         public City CityAssault { get; set; }
         public City CityResidence { get; set; }
         public int AccompanimentMinutes { get; set; }
         public Hospital ReferringHospital { get; set; }
         public Hospital HospitalAttended { get; set; }
-        //Social Work Attendance LOOKUP y/n/na
-        //Police Attendance Lookup y/n/na
-        //Victim Services Attendance Lookup
-        //Medical Only
-        //Evidence Stored
-        //HIV Meds
-        //Referred to CBVS y/n/pvbs/na
-        //Police Reported
-        //Third Party Report
-        //Bad Date Report
+        public SocialWorkAttendance SocialWorkAttendence { get; set; }//y/n/na
+        public PoliceAttendance PoliceAttendence {get;set;} //Lookup y/n/na
+        public VictimServicesAttendance VictimServices { get; set; }//Lookup
+        public MedicalOnly MedicalOnly { get; set; }
+        public EvidenceStored Evidence { get; set; }
+        public HIVMeds HIVMeds { get; set; }
+        public ReferCBVS ReferCBVS { get; set; }//y/n/pvbs/na
+        public PoliceReported PoliceReported { get; set; }
+        public ThirdPartyReport ThirdParty { get; set; }
+
+        public BadDateReport BadDate { get; set; }
         public int NumTransportProvided { get; set; }
         public bool ReferToNurse { get; set; }
     }

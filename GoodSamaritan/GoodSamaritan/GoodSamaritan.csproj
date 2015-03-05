@@ -183,9 +183,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503050213570_InitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503050213570_InitialCreate.Designer.cs">
-      <DependentUpon>201503050213570_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503050418427_TestCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503050418427_TestCreate.Designer.cs">
+      <DependentUpon>201503050418427_TestCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
@@ -210,6 +210,7 @@
     <Compile Include="Models\Client\Victim.cs" />
     <Compile Include="Models\Smart\City.cs" />
     <Compile Include="Models\Smart\Hospital.cs" />
+    <Compile Include="Models\Smart\SexWorkExploitation.cs" />
     <Compile Include="Models\Smart\Smart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -388,8 +389,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503050213570_InitialCreate.resx">
-      <DependentUpon>201503050213570_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503050418427_TestCreate.resx">
+      <DependentUpon>201503050418427_TestCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
