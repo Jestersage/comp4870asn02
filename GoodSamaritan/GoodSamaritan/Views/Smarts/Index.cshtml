@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GoodSamaritan.Models.Smart.Smart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccompanimentMinutes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumTransportProvided)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferToNurse)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccompanimentMinutes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumTransportProvided)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferToNurse)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SmartId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SmartId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SmartId })
+        </td>
+    </tr>
+}
+
+</table>
