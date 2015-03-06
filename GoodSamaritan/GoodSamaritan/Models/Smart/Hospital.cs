@@ -9,5 +9,6 @@ namespace GoodSamaritan.Models.Smart
     {
         public int HospitalId { get; set; }
         public string HospitalName { get; set; }
+        public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

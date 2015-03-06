@@ -10,5 +10,6 @@ namespace GoodSamaritan.Models.Smart
 
         public int EvidenceStoredId { get; set; }
         public string Value { get; set; }
+        public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

@@ -13,29 +13,28 @@ namespace GoodSamaritan.Models.Smart
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SmartId { get; set; }
         //Foreign Key to Client
-        [ForeignKey("Client")]
         public int ClientId { get; set; }
         public virtual ICollection<Client.Client> Clients { get; set; }
 
-        public SexWorkExploitation Exploitation { get; set; } //Yes, No, N/A
-        public MultiplePerpetrator MultiPerp {get;set;} //Yes. No N/A
-        public DrugFacilitatedAssault DrugAssault { get; set; } //Yes No N/A
-        public City CityAssault { get; set; }
-        public City CityResidence { get; set; }
+        public virtual SexWorkExploitation Exploitation { get; set; } //Yes, No, N/A
+        public virtual MultiplePerpetrator MultiPerp { get; set; } //Yes. No N/A
+        public virtual DrugFacilitatedAssault DrugAssault { get; set; } //Yes No N/A
+        public virtual City CityAssault { get; set; }
+        public virtual CityRes CityResidence { get; set; }
         public int AccompanimentMinutes { get; set; }
-        public Hospital ReferringHospital { get; set; }
-        public Hospital HospitalAttended { get; set; }
-        public SocialWorkAttendance SocialWorkAttendence { get; set; }//y/n/na
-        public PoliceAttendance PoliceAttendence {get;set;} //Lookup y/n/na
-        public VictimServicesAttendance VictimServices { get; set; }//Lookup
-        public MedicalOnly MedicalOnly { get; set; }
-        public EvidenceStored Evidence { get; set; }
-        public HIVMeds HIVMeds { get; set; }
-        public ReferCBVS ReferCBVS { get; set; }//y/n/pvbs/na
-        public PoliceReported PoliceReported { get; set; }
-        public ThirdPartyReport ThirdParty { get; set; }
+        public virtual Hospital ReferringHospital { get; set; }
+        public virtual HospitalAtt HospitalAttended { get; set; }
+        public virtual SocialWorkAttendance SocialWorkAttendence { get; set; }//y/n/na
+        public virtual PoliceAttendance PoliceAttendence { get; set; } //Lookup y/n/na
+        public virtual VictimServicesAttendance VictimServices { get; set; }//Lookup
+        public virtual MedicalOnly MedicalOnly { get; set; }
+        public virtual EvidenceStored Evidence { get; set; }
+        public virtual HIVMeds HIVMeds { get; set; }
+        public virtual ReferCBVS ReferCBVS { get; set; }//y/n/pvbs/na
+        public virtual PoliceReported PoliceReported { get; set; }
+        public virtual ThirdPartyReport ThirdParty { get; set; }
 
-        public BadDateReport BadDate { get; set; }
+        public virtual BadDateReport BadDate { get; set; }
         public int NumTransportProvided { get; set; }
         public bool ReferToNurse { get; set; }
     }

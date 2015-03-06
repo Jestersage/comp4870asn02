@@ -9,5 +9,6 @@ namespace GoodSamaritan.Models.Client
     {
         public int DuplicateFileId { get; set; }
         public string IsDuplicate { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

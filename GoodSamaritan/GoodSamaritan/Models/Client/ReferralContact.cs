@@ -11,5 +11,6 @@ namespace GoodSamaritan.Models.Client
 
         //PBVS; MCFD; PBVS; VictimLINK; TH; Self; FNS; Other; Medical
         public string ReferralContactName {get;set;}
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

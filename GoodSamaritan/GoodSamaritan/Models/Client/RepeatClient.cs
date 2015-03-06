@@ -9,5 +9,6 @@ namespace GoodSamaritan.Models.Client
     {
         public int RepeatClientId { get; set; }
         public string Repeat { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

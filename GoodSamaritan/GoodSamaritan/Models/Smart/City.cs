@@ -9,6 +9,7 @@ namespace GoodSamaritan.Models.Smart
     {
         public int CityId { get; set; }
         public string CityName { get; set; }
+        public virtual ICollection<Smart> Smarts { get; set; }
 
     }
 }

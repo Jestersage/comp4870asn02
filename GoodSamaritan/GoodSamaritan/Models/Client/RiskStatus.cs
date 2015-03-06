@@ -11,5 +11,6 @@ namespace GoodSamaritan.Models.Client
 
         //Pending; Complete; null
         public string RiskStatusValue { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

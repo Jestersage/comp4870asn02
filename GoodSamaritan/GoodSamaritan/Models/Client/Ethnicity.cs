@@ -9,5 +9,6 @@ namespace GoodSamaritan.Models.Client
     {
         public int EthnicityId { get; set; }
         public string Ethnictiy { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

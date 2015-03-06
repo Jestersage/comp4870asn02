@@ -5,10 +5,11 @@ using System.Web;
 
 namespace GoodSamaritan.Models.Smart
 {
-    public class MultiplePerpetrator
+    public class HospitalAtt
     {
-        public int MultiplePerpetratorId { get; set; }
-        public string Value { get; set; }
+
+        public int HospitalAttId { get; set; }
+        public string HospitalAttName { get; set; }
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }
