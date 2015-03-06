@@ -11,7 +11,7 @@ namespace GoodSamaritan.Models.Client
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClientId { get; set; }
-        public virtual Smart Smarts { get; set; }
+        public virtual Smart.Smart Smarts { get; set; }
 
         public FiscalYear FiscalYear { get; set; }
         public int Month { get; set; }
