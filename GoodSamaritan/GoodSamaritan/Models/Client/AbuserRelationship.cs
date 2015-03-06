@@ -11,5 +11,7 @@ namespace GoodSamaritan.Models.Client
         //Acquaintance; Bad Date; DNA; Ex-Partner; Friend;
         //Multiple Perps; N/A; Other; Other Familial; Parent; Partner; Sibling; Stranger
         public string Type { get; set; }
+
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

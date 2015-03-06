@@ -13,7 +13,9 @@ namespace GoodSamaritan.Models.Smart
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SmartId { get; set; }
         //Foreign Key to Client
+        [ForeignKey("Client")]
         public int ClientId { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
 
         public SexWorkExploitation Exploitation { get; set; } //Yes, No, N/A
         public MultiplePerpetrator MultiPerp {get;set;} //Yes. No N/A

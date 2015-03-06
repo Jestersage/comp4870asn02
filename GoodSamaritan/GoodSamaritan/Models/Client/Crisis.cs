@@ -11,5 +11,6 @@ namespace GoodSamaritan.Models.Client
 
         //Call; Accompaniment; Drop-In
         public string CrisisName { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

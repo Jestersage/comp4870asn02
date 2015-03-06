@@ -30,6 +30,8 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            /*
             List<Client> Clients = new List<Client>() {
               new Client { 
                 ClientId= 1, 
@@ -44,6 +46,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => c.ClientId,
                 Clients.ToArray()
             );
+             * */
 
             List<FiscalYear> FiscalYears = new List<FiscalYear>() {
                 new FiscalYear { 
