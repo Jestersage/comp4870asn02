@@ -6,14 +6,14 @@ namespace GoodSamaritan.Migrations.ClientMigrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
+    public sealed partial class NewCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201503051825520_InitialCreate"; }
+            get { return "201503060546046_NewCreate"; }
         }
         
         string IMigrationMetadata.Source

@@ -201,9 +201,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503051825520_InitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503051825520_InitialCreate.Designer.cs">
-      <DependentUpon>201503051825520_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503060546046_NewCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503060546046_NewCreate.Designer.cs">
+      <DependentUpon>201503060546046_NewCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
@@ -494,8 +494,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503051825520_InitialCreate.resx">
-      <DependentUpon>201503051825520_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503060546046_NewCreate.resx">
+      <DependentUpon>201503060546046_NewCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

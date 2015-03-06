@@ -4,4 +4,6 @@ Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Mig
 
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "InitialCreate"
 
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "NewCreate"
+
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration

@@ -333,6 +333,55 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new PoliceAttendance { Value = "N/A" }
             );
 
+            context.VictimServicesAttendances.AddOrUpdate(
+                  vsa => vsa.Value,
+                  new VictimServicesAttendance { Value = "Yes" },
+                  new VictimServicesAttendance { Value = "No" },
+                  new VictimServicesAttendance { Value = "N/A" }
+            );
+
+            context.MedicalOnlies.AddOrUpdate(
+                  mo => mo.Value,
+                  new MedicalOnly { Value = "Yes" },
+                  new MedicalOnly { Value = "No" },
+                  new MedicalOnly { Value = "N/A" }
+            );
+
+            context.EvidenceStoreds.AddOrUpdate(
+                  es => es.Value,
+                  new EvidenceStored { Value = "Yes" },
+                  new EvidenceStored { Value = "No" },
+                  new EvidenceStored { Value = "N/A" }
+            );
+
+            context.HIVMeds.AddOrUpdate(
+                  hiv => hiv.Value,
+                  new HIVMeds { Value = "Yes" },
+                  new HIVMeds { Value = "No" },
+                  new HIVMeds { Value = "N/A" }
+            );
+
+            context.ReferCBVS.AddOrUpdate(
+                  cbvs => cbvs.Value,
+                  new ReferCBVS { Value = "Yes" },
+                  new ReferCBVS { Value = "No" },
+                  new ReferCBVS { Value = "PVBS only" },
+                  new ReferCBVS { Value = "N/A" }
+            );
+            context.PoliceReporteds.AddOrUpdate(
+                  copr => copr.Value,
+                  new PoliceReported { Value = "Yes" },
+                  new PoliceReported { Value = "No" },
+                  new PoliceReported { Value = "N/A" }
+            );
+
+            context.ThirdPartyReports.AddOrUpdate(
+                  tpr => tpr.Value,
+                  new ThirdPartyReport { Value = "Yes" },
+                  new ThirdPartyReport { Value = "No" },
+                  new ThirdPartyReport { Value = "N/A" }
+            );
+
             context.BadDateReports.AddOrUpdate(
                   bd => bd.Value,
                   new BadDateReport { Value = "Yes" },
