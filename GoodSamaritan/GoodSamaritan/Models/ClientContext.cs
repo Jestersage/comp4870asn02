@@ -8,8 +8,10 @@ namespace GoodSamaritan.Models.Client
 {
     public class ClientContext:DbContext
     {
-        public ClientContext() : base("DefaultConnection")
-        { Database.SetInitializer(new DropCreateDatabaseAlways<ClientContext>()); }
+        public ClientContext()
+            : base("DefaultConnection")
+        //{ Database.SetInitializer(new DropCreateDatabaseAlways<ClientContext>()); }
+        { }
         public DbSet<Client> Clients{get; set;}
 
         public DbSet<AbuserRelationship> AbuserRelationships { get; set; }

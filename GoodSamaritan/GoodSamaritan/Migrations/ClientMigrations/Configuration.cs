@@ -67,7 +67,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 f => f.FiscalYearId,
                 FiscalYears.ToArray()
             );
-
+            context.SaveChanges();
 
             context.RiskLevels.AddOrUpdate(
                   risk => risk.RiskLevelValue,
@@ -75,19 +75,21 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new RiskLevel { RiskLevelValue = "DVU" },
                   new RiskLevel { RiskLevelValue = "" }
             );
-
+            context.SaveChanges();
             context.Crises.AddOrUpdate(
                   cri => cri.CrisisName,
                   new Crisis { CrisisName = "Call" },
                   new Crisis { CrisisName = "Accompaniment" },
                   new Crisis { CrisisName = "Drop-in" }
             );
+            context.SaveChanges();
 
             context.Services.AddOrUpdate(
                   ser => ser.ServiceName,
                   new Service { ServiceName = "File" },
                   new Service { ServiceName = "N/A" }
             );
+            context.SaveChanges();
 
             //Crisis; Court; SMART; DVU; MCFD
             context.Programs.AddOrUpdate(
@@ -100,12 +102,14 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                       
                   new Program { ProgramName = "MCFD" }
             );
+            context.SaveChanges();
 
             context.RiskStatus.AddOrUpdate(
                   risks => risks.RiskStatusValue,
                   new RiskStatus { RiskStatusValue = "File" },
                   new RiskStatus { RiskStatusValue = "N/A" }
             );
+            context.SaveChanges();
 
             //Michelle; Tyra; Louise; Angela; Dave; Troy; Michael; Manpreet; Patrick; None
             context.AssignedWorkers.AddOrUpdate(
@@ -121,6 +125,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new AssignedWorker { Name = "Patrick" },
                   new AssignedWorker { Name = "None" }
             );
+            context.SaveChanges();
 
             //Community Agency; Family/Friend; Government; CVAP; CBVS
             context.ReferralSources.AddOrUpdate(
@@ -131,6 +136,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new ReferralSource { Source = "CVAP" },
                   new ReferralSource { Source = "CBVS" }
             );
+            context.SaveChanges();
 
             context.ReferralContacts.AddOrUpdate(
                   refc => refc.ReferralContactName,
@@ -144,7 +150,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new ReferralContact { ReferralContactName = "Other" },
                   new ReferralContact { ReferralContactName = "Medical" }
             );
-
+            context.SaveChanges();
             
             //Abduction; Adult Historical Sexual Assault; Adult Sexual Assault;
             //Partner Assault; Attempted Murder; Child Physical Assault;\
@@ -170,6 +176,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new Incident { Type = "Threatening" },
                   new Incident { Type = "Youth Sexual Assault/Exploitation" }
             );
+            context.SaveChanges();
 
             //Acquaintance; Bad Date; DNA; Ex-Partner; Friend;
             //Multiple Perps; N/A; Other; Other Familial; Parent;
@@ -190,12 +197,14 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new AbuserRelationship { Type = "Sibling" },
                   new AbuserRelationship { Type = "Stranger" }
             );
+            context.SaveChanges();
 
             context.Victims.AddOrUpdate(
                  vic => vic.Type,
                  new Victim { Type = "Primary" },
                  new Victim { Type = "Secondary" }
            );
+            context.SaveChanges();
 
             context.FamilyViolenceFiles.AddOrUpdate(
                  fvf => fvf.Status,
@@ -203,6 +212,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                  new FamilyViolenceFile { Status = "No" },
                  new FamilyViolenceFile { Status = "N/A" }
             );
+            context.SaveChanges();
 
             //Indigenous; Asian; Black; Caucasian; Declined;
             //Latin; Middle Eastern; Other; South Asian; South East Asian
@@ -219,6 +229,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                  new Ethnicity { Ethnictiy = "South Asian" },
                  new Ethnicity { Ethnictiy = "South East Asian" }
             );
+            context.SaveChanges();
 
             //Adult >24 <65; Youth >12 <19; Youth >18 <25; Child<13; Senior >64
             context.Ages.AddOrUpdate(
@@ -229,24 +240,28 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                  new Age { AgeRange = "Child<13" },
                  new Age { AgeRange = "Senior >64" }
             );
+            context.SaveChanges();
 
             context.RepeatClients.AddOrUpdate(
                  rc => rc.Repeat,
                  new RepeatClient { Repeat = "Yes" },
                  new RepeatClient { Repeat = "" }
             );
+            context.SaveChanges();
 
             context.DuplicateFiles.AddOrUpdate(
                  df => df.IsDuplicate,
                  new DuplicateFile { IsDuplicate = "Yes" },
                  new DuplicateFile { IsDuplicate = "" }
             );
+            context.SaveChanges();
 
             context.FileStatus.AddOrUpdate(
                  files => files.Status,
                  new FileStatus { Status = "Yes" },
                  new FileStatus { Status = "" }
             );
+            context.SaveChanges();
 
             //SMART
             context.SexWorkExploitations.AddOrUpdate(
@@ -255,6 +270,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new SexWorkExploitation { Value = "No" },
                   new SexWorkExploitation { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.MultiplePerpetrators.AddOrUpdate(
                   mp => mp.Value,
@@ -262,6 +278,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new MultiplePerpetrator { Value = "No" },
                   new MultiplePerpetrator { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.DrugFacilitatedAssaults.AddOrUpdate(
                   dfa => dfa.Value,
@@ -269,6 +286,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new DrugFacilitatedAssault { Value = "No" },
                   new DrugFacilitatedAssault { Value = "N/A" }
             );
+            context.SaveChanges();
 
             //Surrey; Abbotsford; Agassiz; Boston Bar; Burnaby;
             //Chilliwack; Coquitlam; Delta; Harrison Hot Springs;
@@ -301,6 +319,8 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new City { CityName = "Out-of-Province" },
                   new City { CityName = "International" }
             );
+            context.SaveChanges();
+
             //Abbotsford Regional Hospital; Surrey Memorial Hospital; 
             //Burnaby Hospital; Chilliwack General Hospital; Delta Hospital;
             //Eagle Ridge Hospital; Fraser Canyon Hospital; Langley Hospital;
@@ -321,6 +341,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new Hospital { HospitalName = "Ridge Meadows Hospital" },
                   new Hospital { HospitalName = "Royal Columbia Hospital" }
             );
+            context.SaveChanges();
 
             context.SocialWorkAttendances.AddOrUpdate(
                   swa => swa.Value,
@@ -328,6 +349,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new SocialWorkAttendance { Value = "No" },
                   new SocialWorkAttendance { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.PoliceAttendances.AddOrUpdate(
                   copa => copa.Value,
@@ -335,6 +357,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new PoliceAttendance { Value = "No" },
                   new PoliceAttendance { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.VictimServicesAttendances.AddOrUpdate(
                   vsa => vsa.Value,
@@ -342,6 +365,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new VictimServicesAttendance { Value = "No" },
                   new VictimServicesAttendance { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.MedicalOnlies.AddOrUpdate(
                   mo => mo.Value,
@@ -349,6 +373,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new MedicalOnly { Value = "No" },
                   new MedicalOnly { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.EvidenceStoreds.AddOrUpdate(
                   es => es.Value,
@@ -356,6 +381,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new EvidenceStored { Value = "No" },
                   new EvidenceStored { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.HIVMeds.AddOrUpdate(
                   hiv => hiv.Value,
@@ -363,6 +389,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new HIVMeds { Value = "No" },
                   new HIVMeds { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.ReferCBVS.AddOrUpdate(
                   cbvs => cbvs.Value,
@@ -371,12 +398,15 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new ReferCBVS { Value = "PVBS only" },
                   new ReferCBVS { Value = "N/A" }
             );
+            context.SaveChanges();
+
             context.PoliceReporteds.AddOrUpdate(
                   copr => copr.Value,
                   new PoliceReported { Value = "Yes" },
                   new PoliceReported { Value = "No" },
                   new PoliceReported { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.ThirdPartyReports.AddOrUpdate(
                   tpr => tpr.Value,
@@ -384,6 +414,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new ThirdPartyReport { Value = "No" },
                   new ThirdPartyReport { Value = "N/A" }
             );
+            context.SaveChanges();
 
             context.BadDateReports.AddOrUpdate(
                   bd => bd.Value,
@@ -391,7 +422,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new BadDateReport { Value = "No" },
                   new BadDateReport { Value = "N/A" }
             );
-
+            context.SaveChanges();
 
         }
     }
