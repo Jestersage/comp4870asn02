@@ -9,6 +9,6 @@ namespace GoodSamaritan.Models.Client
     {
         public int FamilyViolenceFileId { get; set; }
         //Yes; No or N/A
-        public string status { get; set; }
+        public string Status { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace GoodSamaritan.Models.Client
         public int AbuserRelationshipId { get; set; }
         //Acquaintance; Bad Date; DNA; Ex-Partner; Friend;
         //Multiple Perps; N/A; Other; Other Familial; Parent; Partner; Sibling; Stranger
-        public string type { get; set; }
+        public string Type { get; set; }
     }
 }
