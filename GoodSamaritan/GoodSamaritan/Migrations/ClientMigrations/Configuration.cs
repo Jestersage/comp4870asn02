@@ -70,7 +70,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   risk => risk.RiskLevelValue,
                   new RiskLevel { RiskLevelValue = "High" },
                   new RiskLevel { RiskLevelValue = "DVU" },
-                  new RiskLevel { RiskLevelValue = "NULL" }
+                  new RiskLevel { RiskLevelValue = "" }
             );
 
             context.Crises.AddOrUpdate(
@@ -86,10 +86,16 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new Service { ServiceName = "N/A" }
             );
 
+            //Crisis; Court; SMART; DVU; MCFD
             context.Programs.AddOrUpdate(
                   pro => pro.ProgramName,
-                  new Program { ProgramName = "File" },
-                  new Program { ProgramName = "N/A" }
+                  new Program { ProgramName = "Crisis" },
+                  new Program { ProgramName = "Court" },
+                  
+                  new Program { ProgramName = "SMART" },
+                  new Program { ProgramName = "DVU" },
+                      
+                  new Program { ProgramName = "MCFD" }
             );
 
             context.RiskStatus.AddOrUpdate(
@@ -136,14 +142,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new ReferralContact { ReferralContactName = "Medical" }
             );
 
-            //SMART
-            context.BadDateReports.AddOrUpdate(
-                  bd => bd.Value,
-                  new BadDateReport { Value = "Yes" },
-                  new BadDateReport { Value = "No" },
-                  new BadDateReport { Value = "N/A" }
-            );
-
+            
             //Abduction; Adult Historical Sexual Assault; Adult Sexual Assault;
             //Partner Assault; Attempted Murder; Child Physical Assault;\
             //Child Sexual Abuse/Exploitation; Criminal Harassment/Stalking;
@@ -227,6 +226,121 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                  new Age { AgeRange = "Child<13" },
                  new Age { AgeRange = "Senior >64" }
             );
+
+            context.RepeatClients.AddOrUpdate(
+                 rc => rc.Repeat,
+                 new RepeatClient { Repeat = "Yes" },
+                 new RepeatClient { Repeat = "" }
+            );
+
+            context.DuplicateFiles.AddOrUpdate(
+                 df => df.IsDuplicate,
+                 new DuplicateFile { IsDuplicate = "Yes" },
+                 new DuplicateFile { IsDuplicate = "" }
+            );
+
+            context.FileStatus.AddOrUpdate(
+                 files => files.Status,
+                 new FileStatus { Status = "Yes" },
+                 new FileStatus { Status = "" }
+            );
+
+            //SMART
+            context.SexWorkExploitations.AddOrUpdate(
+                  swe => swe.Value,
+                  new SexWorkExploitation { Value = "Yes" },
+                  new SexWorkExploitation { Value = "No" },
+                  new SexWorkExploitation { Value = "N/A" }
+            );
+
+            context.MultiplePerpetrators.AddOrUpdate(
+                  mp => mp.Value,
+                  new MultiplePerpetrator { Value = "Yes" },
+                  new MultiplePerpetrator { Value = "No" },
+                  new MultiplePerpetrator { Value = "N/A" }
+            );
+
+            context.DrugFacilitatedAssaults.AddOrUpdate(
+                  dfa => dfa.Value,
+                  new DrugFacilitatedAssault { Value = "Yes" },
+                  new DrugFacilitatedAssault { Value = "No" },
+                  new DrugFacilitatedAssault { Value = "N/A" }
+            );
+
+            //Surrey; Abbotsford; Agassiz; Boston Bar; Burnaby;
+            //Chilliwack; Coquitlam; Delta; Harrison Hot Springs;
+            //Hope; Langley; Maple Ridge; Mission; New Westminster;
+            //Pitt Meadows; Port Coquitlam; Port Moody; Vancouver;
+            //White Rock; Yale; Other – BC; Out-of-Province; International
+            context.Cities.AddOrUpdate(
+                  cit => cit.CityName,
+                  new City { CityName = "Surrey" },
+                  new City { CityName = "Abbotsford" },
+                  new City { CityName = "Agassiz" },
+                  new City { CityName = "Boston Bar" },
+                  new City { CityName = "Burnaby" },
+                  new City { CityName = "Chilliwack" },
+                  new City { CityName = "Coquitlam" },
+                  new City { CityName = "Delta" },
+                  new City { CityName = "Harrison Hot Springs" },
+                  new City { CityName = "Hope" },
+                  new City { CityName = "Langley" },
+                  new City { CityName = "Maple Ridge" },
+                  new City { CityName = "Mission" },
+                  new City { CityName = "New Westminster" },
+                  new City { CityName = "Pitt Meadows" },
+                  new City { CityName = "Port Coquitlam" },
+                  new City { CityName = "Port Moody" },
+                  new City { CityName = "Vancouver" },
+                  new City { CityName = "White Rock" },
+                  new City { CityName = "Yale" },
+                  new City { CityName = "Other – BC" },
+                  new City { CityName = "Out-of-Province" },
+                  new City { CityName = "International" }
+            );
+            //Abbotsford Regional Hospital; Surrey Memorial Hospital; 
+            //Burnaby Hospital; Chilliwack General Hospital; Delta Hospital;
+            //Eagle Ridge Hospital; Fraser Canyon Hospital; Langley Hospital;
+            //Mission Hospital; Peace Arch Hospital; Ridge Meadows Hospital;
+            //Royal Columbia Hospital
+            context.Hospitals.AddOrUpdate(
+                  hos => hos.HospitalName,
+                  new Hospital { HospitalName = "Abbotsford Regional Hospital" },
+                  new Hospital { HospitalName = "Surrey Memorial Hospital" },
+                  new Hospital { HospitalName = "Burnaby Hospital" },
+                  new Hospital { HospitalName = "Chilliwack General Hospital" },
+                  new Hospital { HospitalName = "Delta Hospital" },
+                  new Hospital { HospitalName = "Eagle Ridge Hospital" },
+                  new Hospital { HospitalName = "Fraser Canyon Hospital" },
+                  new Hospital { HospitalName = "Langley Hospital" },
+                  new Hospital { HospitalName = "Mission Hospital" },
+                  new Hospital { HospitalName = "Peace Arch Hospital" },
+                  new Hospital { HospitalName = "Ridge Meadows Hospital" },
+                  new Hospital { HospitalName = "Royal Columbia Hospital" }
+            );
+
+            context.SocialWorkAttendances.AddOrUpdate(
+                  swa => swa.Value,
+                  new SocialWorkAttendance { Value = "Yes" },
+                  new SocialWorkAttendance { Value = "No" },
+                  new SocialWorkAttendance { Value = "N/A" }
+            );
+
+            context.PoliceAttendances.AddOrUpdate(
+                  copa => copa.Value,
+                  new PoliceAttendance { Value = "Yes" },
+                  new PoliceAttendance { Value = "No" },
+                  new PoliceAttendance { Value = "N/A" }
+            );
+
+            context.BadDateReports.AddOrUpdate(
+                  bd => bd.Value,
+                  new BadDateReport { Value = "Yes" },
+                  new BadDateReport { Value = "No" },
+                  new BadDateReport { Value = "N/A" }
+            );
+
+
         }
     }
 }
