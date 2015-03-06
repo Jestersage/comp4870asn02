@@ -80,6 +80,10 @@ namespace GoodSamaritan.Models.Client
 
         public System.Data.Entity.DbSet<GoodSamaritan.Models.Smart.VictimServicesAttendance> VictimServicesAttendances { get; set; }
 
+        public System.Data.Entity.DbSet<GoodSamaritan.Models.Smart.CityRes> CityRes { get; set; }
+
+        public System.Data.Entity.DbSet<GoodSamaritan.Models.Smart.HospitalAtt> HospitalAtts { get; set; }
+
         
 
 
