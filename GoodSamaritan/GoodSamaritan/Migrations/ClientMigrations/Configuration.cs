@@ -72,6 +72,52 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new BadDateReport { Value = "N/A" }
             );
 
+            context.RiskLevels.AddOrUpdate(
+                  risk => risk.RiskLevelValue,
+                  new RiskLevel { RiskLevelValue = "High" },
+                  new RiskLevel { RiskLevelValue = "DVU" },
+                  new RiskLevel { RiskLevelValue = "NULL" }
+            );
+
+            context.Crises.AddOrUpdate(
+                  cri => cri.CrisisName,
+                  new Crisis { CrisisName = "Call" },
+                  new Crisis { CrisisName = "Accompaniment" },
+                  new Crisis { CrisisName = "Drop-in" }
+            );
+
+            context.Services.AddOrUpdate(
+                  ser => ser.ServiceName,
+                  new Service { ServiceName = "File" },
+                  new Service { ServiceName = "N/A" }
+            );
+
+            context.Programs.AddOrUpdate(
+                  pro => pro.ProgramName,
+                  new Program { ProgramName = "File" },
+                  new Program { ProgramName = "N/A" }
+            );
+
+            context.RiskStatus.AddOrUpdate(
+                  rs => rs.RiskStatusValue,
+                  new RiskStatus { RiskStatusValue = "File" },
+                  new RiskStatus { RiskStatusValue = "N/A" }
+            );
+
+            //Michelle; Tyra; Louise; Angela; Dave; Troy; Michael; Manpreet; Patrick; None
+            context.AssignedWorkers.AddOrUpdate(
+                  aw => aw.Name,
+                  new AssignedWorker { Name = "Michelle" },
+                  new AssignedWorker { Name = "Tyra" },
+                  new AssignedWorker { Name = "Louise" },
+                  new AssignedWorker { Name = "Angela" },
+                  new AssignedWorker { Name = "Dave" },
+                  new AssignedWorker { Name = "Troy" },
+                  new AssignedWorker { Name = "Michael" },
+                  new AssignedWorker { Name = "Manpreet" },
+                  new AssignedWorker { Name = "Patrick" },
+                  new AssignedWorker { Name = "None" }
+            );
         }
     }
 }
