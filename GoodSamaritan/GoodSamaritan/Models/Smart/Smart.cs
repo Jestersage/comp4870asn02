@@ -40,17 +40,34 @@ namespace GoodSamaritan.Models.Smart
         public virtual HospitalAtt HospitalAttended { get; set; }
 
 
-
+        public int SocialWorkAttendanceId { get; set; }
         public virtual SocialWorkAttendance SocialWorkAttendence { get; set; }//y/n/na
+
+        public int PoliceAttendanceId { get; set; }
         public virtual PoliceAttendance PoliceAttendence { get; set; } //Lookup y/n/na
+
+        public int VictimServicesAttendanceId { get; set; }
         public virtual VictimServicesAttendance VictimServices { get; set; }//Lookup
+
+        public int MedicalOnlyId { get; set; }
         public virtual MedicalOnly MedicalOnly { get; set; }
+
+        public int EvidenceStoredId { get; set; }
         public virtual EvidenceStored Evidence { get; set; }
+
+        public int HIVMedsId { get; set; }
         public virtual HIVMeds HIVMeds { get; set; }
+
+        public int ReferCBVSId { get; set; }
         public virtual ReferCBVS ReferCBVS { get; set; }//y/n/pvbs/na
+
+        public int PoliceReportedId { get; set; }
         public virtual PoliceReported PoliceReported { get; set; }
+
+        public int ThirdPartyReportId { get; set; }
         public virtual ThirdPartyReport ThirdParty { get; set; }
 
+        public int BadDateReportId { get; set; }
         public virtual BadDateReport BadDate { get; set; }
         public int NumTransportProvided { get; set; }
         public bool ReferToNurse { get; set; }
