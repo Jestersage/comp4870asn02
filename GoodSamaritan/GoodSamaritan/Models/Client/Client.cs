@@ -18,17 +18,21 @@ namespace GoodSamaritan.Models.Client
         //public string FiscalYearName { get; set; }
         public int FiscalYearId { get; set; }
         public virtual FiscalYear FiscalYear { get; set; }
-
+        [Range(1, 12, ErrorMessage="Please enter a correct number of month")]
         public int Month { get; set; }
+        [Range(1, 31)]
         public int Day { get; set; }
         public string Surname { get; set; }
         public string FirstName { get; set; }
 
         //Format: 99-99999, or null
+        [RegularExpression(@"[0-9]{2,2}-[0-9]{5,5}", ErrorMessage="If there are any files, they should be in the format of 99-99999")]
         public string PoliceFileNum { get; set; }
         
         //nullable
-        public int CourtFileNum { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
+        public int? CourtFileNum { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
         public int SWCFileNum { get; set; }
 
         //public string RiskLevelValue { get; set; }

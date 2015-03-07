@@ -13,7 +13,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201503070222333_InitialCreate"; }
+            get { return "201503070248284_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

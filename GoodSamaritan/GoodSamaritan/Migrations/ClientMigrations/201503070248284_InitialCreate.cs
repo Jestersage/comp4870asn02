@@ -27,7 +27,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         Surname = c.String(),
                         FirstName = c.String(),
                         PoliceFileNum = c.String(),
-                        CourtFileNum = c.Int(nullable: false),
+                        CourtFileNum = c.Int(),
                         SWCFileNum = c.Int(nullable: false),
                         RiskLevelId = c.Int(nullable: false),
                         CrisisId = c.Int(nullable: false),
