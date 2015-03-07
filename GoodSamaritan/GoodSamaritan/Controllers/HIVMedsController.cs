@@ -47,7 +47,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "HIVMedsId,Value")] HIVMeds hIVMeds)
+        public ActionResult Create([Bind(Include = "HIVMedsId,HIVMedsValue")] HIVMeds hIVMeds)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "HIVMedsId,Value")] HIVMeds hIVMeds)
+        public ActionResult Edit([Bind(Include = "HIVMedsId,HIVMedsValue")] HIVMeds hIVMeds)
         {
             if (ModelState.IsValid)
             {

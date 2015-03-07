@@ -8,7 +8,7 @@ namespace GoodSamaritan.Models.Smart
     public class MultiplePerpetrator
     {
         public int MultiplePerpetratorId { get; set; }
-        public string Value { get; set; }
+        public string MultiplePerpetratorValue { get; set; }
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

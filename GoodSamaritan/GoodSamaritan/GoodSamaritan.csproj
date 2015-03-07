@@ -203,9 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503070121073_InitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503070121073_InitialCreate.Designer.cs">
-      <DependentUpon>201503070121073_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503070222333_InitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503070222333_InitialCreate.Designer.cs">
+      <DependentUpon>201503070222333_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
@@ -247,7 +247,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Client\Client.cs" />
     <Compile Include="Models\ClientContext.cs" />
-    <Compile Include="Models\Client\Users.cs" />
     <Compile Include="Models\Smart\SocialWorkAttendance.cs" />
     <Compile Include="Models\Smart\ThirdPartyReport.cs" />
     <Compile Include="Models\Smart\VictimServicesAttendance.cs" />
@@ -508,8 +507,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503070121073_InitialCreate.resx">
-      <DependentUpon>201503070121073_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503070222333_InitialCreate.resx">
+      <DependentUpon>201503070222333_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

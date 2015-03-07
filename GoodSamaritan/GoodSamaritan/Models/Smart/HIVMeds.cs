@@ -8,7 +8,7 @@ namespace GoodSamaritan.Models.Smart
     public class HIVMeds
     {
         public int HIVMedsId { get; set; }
-        public string Value { get; set; }
+        public string HIVMedsValue { get; set; }
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

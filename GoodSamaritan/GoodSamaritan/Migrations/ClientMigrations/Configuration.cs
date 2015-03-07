@@ -267,26 +267,26 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
             //SMART
             context.SexWorkExploitations.AddOrUpdate(
-                  swe => swe.Value,
-                  new SexWorkExploitation { Value = "Yes" },
-                  new SexWorkExploitation { Value = "No" },
-                  new SexWorkExploitation { Value = "N/A" }
+                  swe => swe.SexWorkExploitationValue,
+                  new SexWorkExploitation { SexWorkExploitationValue = "Yes" },
+                  new SexWorkExploitation { SexWorkExploitationValue = "No" },
+                  new SexWorkExploitation { SexWorkExploitationValue = "N/A" }
             );
             context.SaveChanges();
 
             context.MultiplePerpetrators.AddOrUpdate(
-                  mp => mp.Value,
-                  new MultiplePerpetrator { Value = "Yes" },
-                  new MultiplePerpetrator { Value = "No" },
-                  new MultiplePerpetrator { Value = "N/A" }
+                  mp => mp.MultiplePerpetratorValue,
+                  new MultiplePerpetrator { MultiplePerpetratorValue = "Yes" },
+                  new MultiplePerpetrator { MultiplePerpetratorValue = "No" },
+                  new MultiplePerpetrator { MultiplePerpetratorValue = "N/A" }
             );
             context.SaveChanges();
 
             context.DrugFacilitatedAssaults.AddOrUpdate(
-                  dfa => dfa.Value,
-                  new DrugFacilitatedAssault { Value = "Yes" },
-                  new DrugFacilitatedAssault { Value = "No" },
-                  new DrugFacilitatedAssault { Value = "N/A" }
+                  dfa => dfa.DrugFacilitatedAssaultValue,
+                  new DrugFacilitatedAssault { DrugFacilitatedAssaultValue = "Yes" },
+                  new DrugFacilitatedAssault { DrugFacilitatedAssaultValue = "No" },
+                  new DrugFacilitatedAssault { DrugFacilitatedAssaultValue = "N/A" }
             );
             context.SaveChanges();
 
@@ -346,83 +346,83 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             context.SaveChanges();
 
             context.SocialWorkAttendances.AddOrUpdate(
-                  swa => swa.Value,
-                  new SocialWorkAttendance { Value = "Yes" },
-                  new SocialWorkAttendance { Value = "No" },
-                  new SocialWorkAttendance { Value = "N/A" }
+                  swa => swa.SocialWorkAttendanceValue,
+                  new SocialWorkAttendance { SocialWorkAttendanceValue = "Yes" },
+                  new SocialWorkAttendance { SocialWorkAttendanceValue = "No" },
+                  new SocialWorkAttendance { SocialWorkAttendanceValue = "N/A" }
             );
             context.SaveChanges();
 
             context.PoliceAttendances.AddOrUpdate(
-                  copa => copa.Value,
-                  new PoliceAttendance { Value = "Yes" },
-                  new PoliceAttendance { Value = "No" },
-                  new PoliceAttendance { Value = "N/A" }
+                  copa => copa.PoliceAttendanceValue,
+                  new PoliceAttendance { PoliceAttendanceValue = "Yes" },
+                  new PoliceAttendance { PoliceAttendanceValue = "No" },
+                  new PoliceAttendance { PoliceAttendanceValue = "N/A" }
             );
             context.SaveChanges();
 
             context.VictimServicesAttendances.AddOrUpdate(
-                  vsa => vsa.Value,
-                  new VictimServicesAttendance { Value = "Yes" },
-                  new VictimServicesAttendance { Value = "No" },
-                  new VictimServicesAttendance { Value = "N/A" }
+                  vsa => vsa.VictimServicesAttendanceValue,
+                  new VictimServicesAttendance { VictimServicesAttendanceValue = "Yes" },
+                  new VictimServicesAttendance { VictimServicesAttendanceValue = "No" },
+                  new VictimServicesAttendance { VictimServicesAttendanceValue = "N/A" }
             );
             context.SaveChanges();
 
             context.MedicalOnlies.AddOrUpdate(
-                  mo => mo.Value,
-                  new MedicalOnly { Value = "Yes" },
-                  new MedicalOnly { Value = "No" },
-                  new MedicalOnly { Value = "N/A" }
+                  mo => mo.MedicalOnlyValue,
+                  new MedicalOnly { MedicalOnlyValue = "Yes" },
+                  new MedicalOnly { MedicalOnlyValue = "No" },
+                  new MedicalOnly { MedicalOnlyValue = "N/A" }
             );
             context.SaveChanges();
 
             context.EvidenceStoreds.AddOrUpdate(
-                  es => es.Value,
-                  new EvidenceStored { Value = "Yes" },
-                  new EvidenceStored { Value = "No" },
-                  new EvidenceStored { Value = "N/A" }
+                  es => es.EvidenceStoredValue,
+                  new EvidenceStored { EvidenceStoredValue = "Yes" },
+                  new EvidenceStored { EvidenceStoredValue = "No" },
+                  new EvidenceStored { EvidenceStoredValue = "N/A" }
             );
             context.SaveChanges();
 
             context.HIVMeds.AddOrUpdate(
-                  hiv => hiv.Value,
-                  new HIVMeds { Value = "Yes" },
-                  new HIVMeds { Value = "No" },
-                  new HIVMeds { Value = "N/A" }
+                  hiv => hiv.HIVMedsValue,
+                  new HIVMeds { HIVMedsValue = "Yes" },
+                  new HIVMeds { HIVMedsValue = "No" },
+                  new HIVMeds { HIVMedsValue = "N/A" }
             );
             context.SaveChanges();
 
             context.ReferCBVS.AddOrUpdate(
-                  cbvs => cbvs.Value,
-                  new ReferCBVS { Value = "Yes" },
-                  new ReferCBVS { Value = "No" },
-                  new ReferCBVS { Value = "PVBS only" },
-                  new ReferCBVS { Value = "N/A" }
+                  cbvs => cbvs.ReferCBVSValue,
+                  new ReferCBVS { ReferCBVSValue = "Yes" },
+                  new ReferCBVS { ReferCBVSValue = "No" },
+                  new ReferCBVS { ReferCBVSValue = "PVBS only" },
+                  new ReferCBVS { ReferCBVSValue = "N/A" }
             );
             context.SaveChanges();
 
             context.PoliceReporteds.AddOrUpdate(
-                  copr => copr.Value,
-                  new PoliceReported { Value = "Yes" },
-                  new PoliceReported { Value = "No" },
-                  new PoliceReported { Value = "N/A" }
+                  copr => copr.PoliceReportedValue,
+                  new PoliceReported { PoliceReportedValue = "Yes" },
+                  new PoliceReported { PoliceReportedValue = "No" },
+                  new PoliceReported { PoliceReportedValue = "N/A" }
             );
             context.SaveChanges();
 
             context.ThirdPartyReports.AddOrUpdate(
-                  tpr => tpr.Value,
-                  new ThirdPartyReport { Value = "Yes" },
-                  new ThirdPartyReport { Value = "No" },
-                  new ThirdPartyReport { Value = "N/A" }
+                  tpr => tpr.ThirdPartyReportValue,
+                  new ThirdPartyReport { ThirdPartyReportValue = "Yes" },
+                  new ThirdPartyReport { ThirdPartyReportValue = "No" },
+                  new ThirdPartyReport { ThirdPartyReportValue = "N/A" }
             );
             context.SaveChanges();
 
             context.BadDateReports.AddOrUpdate(
-                  bd => bd.Value,
-                  new BadDateReport { Value = "Yes" },
-                  new BadDateReport { Value = "No" },
-                  new BadDateReport { Value = "N/A" }
+                  bd => bd.BadDateReportValue,
+                  new BadDateReport { BadDateReportValue = "Yes" },
+                  new BadDateReport { BadDateReportValue = "No" },
+                  new BadDateReport { BadDateReportValue = "N/A" }
             );
             context.SaveChanges();
 

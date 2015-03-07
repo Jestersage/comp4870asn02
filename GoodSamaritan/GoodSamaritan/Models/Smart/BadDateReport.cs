@@ -8,7 +8,7 @@ namespace GoodSamaritan.Models.Smart
     public class BadDateReport
     {
         public int BadDateReportId { get; set; }
-        public string Value { get; set; }
+        public string BadDateReportValue { get; set; }
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

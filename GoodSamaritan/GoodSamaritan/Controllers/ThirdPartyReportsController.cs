@@ -47,7 +47,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ThirdPartyReportId,Value")] ThirdPartyReport thirdPartyReport)
+        public ActionResult Create([Bind(Include = "ThirdPartyReportId,ThirdPartyReportValue")] ThirdPartyReport thirdPartyReport)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ThirdPartyReportId,Value")] ThirdPartyReport thirdPartyReport)
+        public ActionResult Edit([Bind(Include = "ThirdPartyReportId,ThirdPartyReportValue")] ThirdPartyReport thirdPartyReport)
         {
             if (ModelState.IsValid)
             {

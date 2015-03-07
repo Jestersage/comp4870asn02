@@ -18,7 +18,8 @@ namespace GoodSamaritan.Controllers
         // GET: Smarts
         public ActionResult Index()
         {
-            return View(db.Smarts.ToList());
+            var smarts = db.Smarts.Include(s => s.BadDate).Include(s => s.CityAssault).Include(s => s.CityResidence).Include(s => s.DrugAssault).Include(s => s.Evidence).Include(s => s.Exploitation).Include(s => s.HIVMeds).Include(s => s.HospitalAttended).Include(s => s.MedicalOnly).Include(s => s.MultiPerp).Include(s => s.PoliceAttendence).Include(s => s.PoliceReported).Include(s => s.ReferCBVS).Include(s => s.ReferringHospital).Include(s => s.SocialWorkAttendence).Include(s => s.ThirdParty).Include(s => s.VictimServices);
+            return View(smarts.ToList());
         }
 
         // GET: Smarts/Details/5
@@ -39,6 +40,23 @@ namespace GoodSamaritan.Controllers
         // GET: Smarts/Create
         public ActionResult Create()
         {
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "BadDateReportValue");
+            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName");
+            ViewBag.CityResId = new SelectList(db.CityRes, "CityResId", "CityResName");
+            ViewBag.DrugFacilitatedAssaultId = new SelectList(db.DrugFacilitatedAssaults, "DrugFacilitatedAssaultId", "DrugFacilitatedAssaultValue");
+            ViewBag.EvidenceStoredId = new SelectList(db.EvidenceStoreds, "EvidenceStoredId", "EvidenceStoredValue");
+            ViewBag.SexWorkExploitationId = new SelectList(db.SexWorkExploitations, "SexWorkExploitationId", "SexWorkExploitationValue");
+            ViewBag.HIVMedsId = new SelectList(db.HIVMeds, "HIVMedsId", "HIVMedsValue");
+            ViewBag.HospitalAttId = new SelectList(db.HospitalAtts, "HospitalAttId", "HospitalAttName");
+            ViewBag.MedicalOnlyId = new SelectList(db.MedicalOnlies, "MedicalOnlyId", "MedicalOnlyValue");
+            ViewBag.MultiplePerpetratorId = new SelectList(db.MultiplePerpetrators, "MultiplePerpetratorId", "MultiplePerpetratorValue");
+            ViewBag.PoliceAttendanceId = new SelectList(db.PoliceAttendances, "PoliceAttendanceId", "PoliceAttendanceValue");
+            ViewBag.PoliceReportedId = new SelectList(db.PoliceReporteds, "PoliceReportedId", "PoliceReportedValue");
+            ViewBag.ReferCBVSId = new SelectList(db.ReferCBVS, "ReferCBVSId", "ReferCBVSValue");
+            ViewBag.HospitalId = new SelectList(db.Hospitals, "HospitalId", "HospitalName");
+            ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "SocialWorkAttendanceValue");
+            ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "ThirdPartyReportValue");
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "VictimServicesAttendanceValue");
             return View();
         }
 
@@ -47,7 +65,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SmartId,ClientId,AccompanimentMinutes,NumTransportProvided,ReferToNurse")] Smart smart)
+        public ActionResult Create([Bind(Include = "SmartId,ClientId,SexWorkExploitationId,MultiplePerpetratorId,DrugFacilitatedAssaultId,CityId,CityResId,AccompanimentMinutes,HospitalId,HospitalAttId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HIVMedsId,ReferCBVSId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumTransportProvided,ReferToNurse")] Smart smart)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +74,23 @@ namespace GoodSamaritan.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "BadDateReportValue", smart.BadDateReportId);
+            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName", smart.CityId);
+            ViewBag.CityResId = new SelectList(db.CityRes, "CityResId", "CityResName", smart.CityResId);
+            ViewBag.DrugFacilitatedAssaultId = new SelectList(db.DrugFacilitatedAssaults, "DrugFacilitatedAssaultId", "DrugFacilitatedAssaultValue", smart.DrugFacilitatedAssaultId);
+            ViewBag.EvidenceStoredId = new SelectList(db.EvidenceStoreds, "EvidenceStoredId", "EvidenceStoredValue", smart.EvidenceStoredId);
+            ViewBag.SexWorkExploitationId = new SelectList(db.SexWorkExploitations, "SexWorkExploitationId", "SexWorkExploitationValue", smart.SexWorkExploitationId);
+            ViewBag.HIVMedsId = new SelectList(db.HIVMeds, "HIVMedsId", "HIVMedsValue", smart.HIVMedsId);
+            ViewBag.HospitalAttId = new SelectList(db.HospitalAtts, "HospitalAttId", "HospitalAttName", smart.HospitalAttId);
+            ViewBag.MedicalOnlyId = new SelectList(db.MedicalOnlies, "MedicalOnlyId", "MedicalOnlyValue", smart.MedicalOnlyId);
+            ViewBag.MultiplePerpetratorId = new SelectList(db.MultiplePerpetrators, "MultiplePerpetratorId", "MultiplePerpetratorValue", smart.MultiplePerpetratorId);
+            ViewBag.PoliceAttendanceId = new SelectList(db.PoliceAttendances, "PoliceAttendanceId", "PoliceAttendanceValue", smart.PoliceAttendanceId);
+            ViewBag.PoliceReportedId = new SelectList(db.PoliceReporteds, "PoliceReportedId", "PoliceReportedValue", smart.PoliceReportedId);
+            ViewBag.ReferCBVSId = new SelectList(db.ReferCBVS, "ReferCBVSId", "ReferCBVSValue", smart.ReferCBVSId);
+            ViewBag.HospitalId = new SelectList(db.Hospitals, "HospitalId", "HospitalName", smart.HospitalId);
+            ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "SocialWorkAttendanceValue", smart.SocialWorkAttendanceId);
+            ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "ThirdPartyReportValue", smart.ThirdPartyReportId);
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "VictimServicesAttendanceValue", smart.VictimServicesAttendanceId);
             return View(smart);
         }
 
@@ -71,6 +106,23 @@ namespace GoodSamaritan.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "BadDateReportValue", smart.BadDateReportId);
+            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName", smart.CityId);
+            ViewBag.CityResId = new SelectList(db.CityRes, "CityResId", "CityResName", smart.CityResId);
+            ViewBag.DrugFacilitatedAssaultId = new SelectList(db.DrugFacilitatedAssaults, "DrugFacilitatedAssaultId", "DrugFacilitatedAssaultValue", smart.DrugFacilitatedAssaultId);
+            ViewBag.EvidenceStoredId = new SelectList(db.EvidenceStoreds, "EvidenceStoredId", "EvidenceStoredValue", smart.EvidenceStoredId);
+            ViewBag.SexWorkExploitationId = new SelectList(db.SexWorkExploitations, "SexWorkExploitationId", "SexWorkExploitationValue", smart.SexWorkExploitationId);
+            ViewBag.HIVMedsId = new SelectList(db.HIVMeds, "HIVMedsId", "HIVMedsValue", smart.HIVMedsId);
+            ViewBag.HospitalAttId = new SelectList(db.HospitalAtts, "HospitalAttId", "HospitalAttName", smart.HospitalAttId);
+            ViewBag.MedicalOnlyId = new SelectList(db.MedicalOnlies, "MedicalOnlyId", "MedicalOnlyValue", smart.MedicalOnlyId);
+            ViewBag.MultiplePerpetratorId = new SelectList(db.MultiplePerpetrators, "MultiplePerpetratorId", "MultiplePerpetratorValue", smart.MultiplePerpetratorId);
+            ViewBag.PoliceAttendanceId = new SelectList(db.PoliceAttendances, "PoliceAttendanceId", "PoliceAttendanceValue", smart.PoliceAttendanceId);
+            ViewBag.PoliceReportedId = new SelectList(db.PoliceReporteds, "PoliceReportedId", "PoliceReportedValue", smart.PoliceReportedId);
+            ViewBag.ReferCBVSId = new SelectList(db.ReferCBVS, "ReferCBVSId", "ReferCBVSValue", smart.ReferCBVSId);
+            ViewBag.HospitalId = new SelectList(db.Hospitals, "HospitalId", "HospitalName", smart.HospitalId);
+            ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "SocialWorkAttendanceValue", smart.SocialWorkAttendanceId);
+            ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "ThirdPartyReportValue", smart.ThirdPartyReportId);
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "VictimServicesAttendanceValue", smart.VictimServicesAttendanceId);
             return View(smart);
         }
 
@@ -79,7 +131,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SmartId,ClientId,AccompanimentMinutes,NumTransportProvided,ReferToNurse")] Smart smart)
+        public ActionResult Edit([Bind(Include = "SmartId,ClientId,SexWorkExploitationId,MultiplePerpetratorId,DrugFacilitatedAssaultId,CityId,CityResId,AccompanimentMinutes,HospitalId,HospitalAttId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HIVMedsId,ReferCBVSId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumTransportProvided,ReferToNurse")] Smart smart)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +139,23 @@ namespace GoodSamaritan.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "BadDateReportValue", smart.BadDateReportId);
+            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName", smart.CityId);
+            ViewBag.CityResId = new SelectList(db.CityRes, "CityResId", "CityResName", smart.CityResId);
+            ViewBag.DrugFacilitatedAssaultId = new SelectList(db.DrugFacilitatedAssaults, "DrugFacilitatedAssaultId", "DrugFacilitatedAssaultValue", smart.DrugFacilitatedAssaultId);
+            ViewBag.EvidenceStoredId = new SelectList(db.EvidenceStoreds, "EvidenceStoredId", "EvidenceStoredValue", smart.EvidenceStoredId);
+            ViewBag.SexWorkExploitationId = new SelectList(db.SexWorkExploitations, "SexWorkExploitationId", "SexWorkExploitationValue", smart.SexWorkExploitationId);
+            ViewBag.HIVMedsId = new SelectList(db.HIVMeds, "HIVMedsId", "HIVMedsValue", smart.HIVMedsId);
+            ViewBag.HospitalAttId = new SelectList(db.HospitalAtts, "HospitalAttId", "HospitalAttName", smart.HospitalAttId);
+            ViewBag.MedicalOnlyId = new SelectList(db.MedicalOnlies, "MedicalOnlyId", "MedicalOnlyValue", smart.MedicalOnlyId);
+            ViewBag.MultiplePerpetratorId = new SelectList(db.MultiplePerpetrators, "MultiplePerpetratorId", "MultiplePerpetratorValue", smart.MultiplePerpetratorId);
+            ViewBag.PoliceAttendanceId = new SelectList(db.PoliceAttendances, "PoliceAttendanceId", "PoliceAttendanceValue", smart.PoliceAttendanceId);
+            ViewBag.PoliceReportedId = new SelectList(db.PoliceReporteds, "PoliceReportedId", "PoliceReportedValue", smart.PoliceReportedId);
+            ViewBag.ReferCBVSId = new SelectList(db.ReferCBVS, "ReferCBVSId", "ReferCBVSValue", smart.ReferCBVSId);
+            ViewBag.HospitalId = new SelectList(db.Hospitals, "HospitalId", "HospitalName", smart.HospitalId);
+            ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "SocialWorkAttendanceValue", smart.SocialWorkAttendanceId);
+            ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "ThirdPartyReportValue", smart.ThirdPartyReportId);
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "VictimServicesAttendanceValue", smart.VictimServicesAttendanceId);
             return View(smart);
         }
 

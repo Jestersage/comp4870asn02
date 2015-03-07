@@ -8,7 +8,7 @@ namespace GoodSamaritan.Models.Smart
     public class PoliceReported
     {
         public int PoliceReportedId { get; set; }
-        public string Value { get; set; }
+        public string PoliceReportedValue { get; set; }
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

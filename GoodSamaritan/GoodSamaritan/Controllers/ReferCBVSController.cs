@@ -47,7 +47,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReferCBVSId,Value")] ReferCBVS referCBVS)
+        public ActionResult Create([Bind(Include = "ReferCBVSId,ReferCBVSValue")] ReferCBVS referCBVS)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReferCBVSId,Value")] ReferCBVS referCBVS)
+        public ActionResult Edit([Bind(Include = "ReferCBVSId,ReferCBVSValue")] ReferCBVS referCBVS)
         {
             if (ModelState.IsValid)
             {

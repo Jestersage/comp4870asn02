@@ -47,7 +47,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BadDateReportId,Value")] BadDateReport badDateReport)
+        public ActionResult Create([Bind(Include = "BadDateReportId,BadDateReportValue")] BadDateReport badDateReport)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BadDateReportId,Value")] BadDateReport badDateReport)
+        public ActionResult Edit([Bind(Include = "BadDateReportId,BadDateReportValue")] BadDateReport badDateReport)
         {
             if (ModelState.IsValid)
             {

@@ -47,7 +47,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PoliceAttendanceId,Value")] PoliceAttendance policeAttendance)
+        public ActionResult Create([Bind(Include = "PoliceAttendanceId,PoliceAttendanceValue")] PoliceAttendance policeAttendance)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PoliceAttendanceId,Value")] PoliceAttendance policeAttendance)
+        public ActionResult Edit([Bind(Include = "PoliceAttendanceId,PoliceAttendanceValue")] PoliceAttendance policeAttendance)
         {
             if (ModelState.IsValid)
             {

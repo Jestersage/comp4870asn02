@@ -8,7 +8,7 @@ namespace GoodSamaritan.Models.Smart
     public class ThirdPartyReport
     {
         public int ThirdPartyReportId { get; set; }
-        public string Value { get; set; }
+        public string ThirdPartyReportValue { get; set; }
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

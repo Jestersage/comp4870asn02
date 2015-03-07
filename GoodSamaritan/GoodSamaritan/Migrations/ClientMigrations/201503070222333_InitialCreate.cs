@@ -310,7 +310,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         BadDateReportId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        BadDateReportValue = c.String(),
                     })
                 .PrimaryKey(t => t.BadDateReportId);
             
@@ -337,7 +337,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         DrugFacilitatedAssaultId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        DrugFacilitatedAssaultValue = c.String(),
                     })
                 .PrimaryKey(t => t.DrugFacilitatedAssaultId);
             
@@ -346,7 +346,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         EvidenceStoredId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        EvidenceStoredValue = c.String(),
                     })
                 .PrimaryKey(t => t.EvidenceStoredId);
             
@@ -355,7 +355,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         SexWorkExploitationId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        SexWorkExploitationValue = c.String(),
                     })
                 .PrimaryKey(t => t.SexWorkExploitationId);
             
@@ -364,7 +364,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         HIVMedsId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        HIVMedsValue = c.String(),
                     })
                 .PrimaryKey(t => t.HIVMedsId);
             
@@ -382,7 +382,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         MedicalOnlyId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        MedicalOnlyValue = c.String(),
                     })
                 .PrimaryKey(t => t.MedicalOnlyId);
             
@@ -391,7 +391,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         MultiplePerpetratorId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        MultiplePerpetratorValue = c.String(),
                     })
                 .PrimaryKey(t => t.MultiplePerpetratorId);
             
@@ -400,7 +400,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         PoliceAttendanceId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        PoliceAttendanceValue = c.String(),
                     })
                 .PrimaryKey(t => t.PoliceAttendanceId);
             
@@ -409,7 +409,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         PoliceReportedId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        PoliceReportedValue = c.String(),
                     })
                 .PrimaryKey(t => t.PoliceReportedId);
             
@@ -418,7 +418,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         ReferCBVSId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        ReferCBVSValue = c.String(),
                     })
                 .PrimaryKey(t => t.ReferCBVSId);
             
@@ -436,7 +436,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         SocialWorkAttendanceId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        SocialWorkAttendanceValue = c.String(),
                     })
                 .PrimaryKey(t => t.SocialWorkAttendanceId);
             
@@ -445,7 +445,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         ThirdPartyReportId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        ThirdPartyReportValue = c.String(),
                     })
                 .PrimaryKey(t => t.ThirdPartyReportId);
             
@@ -454,7 +454,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         VictimServicesAttendanceId = c.Int(nullable: false, identity: true),
-                        Value = c.String(),
+                        VictimServicesAttendanceValue = c.String(),
                     })
                 .PrimaryKey(t => t.VictimServicesAttendanceId);
             

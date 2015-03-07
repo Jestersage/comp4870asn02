@@ -47,7 +47,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EvidenceStoredId,Value")] EvidenceStored evidenceStored)
+        public ActionResult Create([Bind(Include = "EvidenceStoredId,EvidenceStoredValue")] EvidenceStored evidenceStored)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EvidenceStoredId,Value")] EvidenceStored evidenceStored)
+        public ActionResult Edit([Bind(Include = "EvidenceStoredId,EvidenceStoredValue")] EvidenceStored evidenceStored)
         {
             if (ModelState.IsValid)
             {
