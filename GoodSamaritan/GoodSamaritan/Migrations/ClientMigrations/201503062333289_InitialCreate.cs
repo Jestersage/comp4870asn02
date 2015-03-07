@@ -21,6 +21,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         ClientId = c.Int(nullable: false, identity: true),
+                        FiscalYearId = c.Int(nullable: false),
                         Month = c.Int(nullable: false),
                         Day = c.Int(nullable: false),
                         Surname = c.String(),
@@ -28,74 +29,74 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         PoliceFileNum = c.String(),
                         CourtFileNum = c.Int(nullable: false),
                         SWCFileNum = c.Int(nullable: false),
+                        RiskLevelId = c.Int(nullable: false),
+                        CrisisId = c.Int(nullable: false),
+                        ServiceId = c.Int(nullable: false),
+                        ProgramId = c.Int(nullable: false),
                         RiskAccessmentAssignedTo = c.String(),
+                        RiskStatusId = c.Int(nullable: false),
+                        AssignedWorkerId = c.Int(nullable: false),
+                        Source = c.String(),
+                        ReferralSourceId = c.Int(nullable: false),
+                        IncidentId = c.Int(nullable: false),
                         AbuserSurname = c.String(),
                         AbuserFirstName = c.String(),
+                        AbuserRelationshipId = c.Int(nullable: false),
+                        VictimId = c.Int(nullable: false),
+                        FamilyViolenceFileId = c.Int(nullable: false),
+                        EthnicityId = c.Int(nullable: false),
+                        AgeId = c.Int(nullable: false),
+                        RepeatClientId = c.Int(nullable: false),
+                        DuplicateFileId = c.Int(nullable: false),
                         NumChildrenAgeZeroSix = c.Int(nullable: false),
                         NumChildrenAgeSevenTweleve = c.Int(nullable: false),
                         NumChildrenAgeTeens = c.Int(nullable: false),
+                        FileStatusId = c.Int(nullable: false),
                         DateLastTransfer = c.DateTime(nullable: false),
                         DateClosed = c.DateTime(nullable: false),
                         DateReopened = c.DateTime(nullable: false),
-                        age_AgeId = c.Int(),
-                        AssignedWorker_AssignedWorkerId = c.Int(),
-                        Crisis_CrisisId = c.Int(),
-                        DuplicateFile_DuplicateFileId = c.Int(),
-                        File_FamilyViolenceFileId = c.Int(),
-                        FileStatuse_FileStatusId = c.Int(),
-                        FiscalYear_FiscalYearId = c.Int(),
-                        Incident_IncidentId = c.Int(),
-                        Program_ProgramId = c.Int(),
-                        Race_EthnicityId = c.Int(),
                         ReferralContact_ReferralContactId = c.Int(),
-                        ReferralSource_ReferralSourceId = c.Int(),
-                        Relationship_AbuserRelationshipId = c.Int(),
-                        Repeat_RepeatClientId = c.Int(),
-                        RiskLevel_RiskLevelId = c.Int(),
-                        RiskStatus_RiskStatusId = c.Int(),
-                        Serivce_ServiceId = c.Int(),
                         Smarts_SmartId = c.Int(),
-                        VictimOfIncident_VictimId = c.Int(),
                     })
                 .PrimaryKey(t => t.ClientId)
-                .ForeignKey("dbo.Ages", t => t.age_AgeId)
-                .ForeignKey("dbo.AssignedWorkers", t => t.AssignedWorker_AssignedWorkerId)
-                .ForeignKey("dbo.Crises", t => t.Crisis_CrisisId)
-                .ForeignKey("dbo.DuplicateFiles", t => t.DuplicateFile_DuplicateFileId)
-                .ForeignKey("dbo.FamilyViolenceFiles", t => t.File_FamilyViolenceFileId)
-                .ForeignKey("dbo.FileStatus", t => t.FileStatuse_FileStatusId)
-                .ForeignKey("dbo.FiscalYears", t => t.FiscalYear_FiscalYearId)
-                .ForeignKey("dbo.Incidents", t => t.Incident_IncidentId)
-                .ForeignKey("dbo.Programs", t => t.Program_ProgramId)
-                .ForeignKey("dbo.Ethnicities", t => t.Race_EthnicityId)
+                .ForeignKey("dbo.Ages", t => t.AgeId, cascadeDelete: true)
+                .ForeignKey("dbo.AssignedWorkers", t => t.AssignedWorkerId, cascadeDelete: true)
+                .ForeignKey("dbo.Crises", t => t.CrisisId, cascadeDelete: true)
+                .ForeignKey("dbo.DuplicateFiles", t => t.DuplicateFileId, cascadeDelete: true)
+                .ForeignKey("dbo.FamilyViolenceFiles", t => t.FamilyViolenceFileId, cascadeDelete: true)
+                .ForeignKey("dbo.FileStatus", t => t.FileStatusId, cascadeDelete: true)
+                .ForeignKey("dbo.FiscalYears", t => t.FiscalYearId, cascadeDelete: true)
+                .ForeignKey("dbo.Incidents", t => t.IncidentId, cascadeDelete: true)
+                .ForeignKey("dbo.Programs", t => t.ProgramId, cascadeDelete: true)
+                .ForeignKey("dbo.Ethnicities", t => t.EthnicityId, cascadeDelete: true)
                 .ForeignKey("dbo.ReferralContacts", t => t.ReferralContact_ReferralContactId)
-                .ForeignKey("dbo.ReferralSources", t => t.ReferralSource_ReferralSourceId)
-                .ForeignKey("dbo.AbuserRelationships", t => t.Relationship_AbuserRelationshipId)
-                .ForeignKey("dbo.RepeatClients", t => t.Repeat_RepeatClientId)
-                .ForeignKey("dbo.RiskLevels", t => t.RiskLevel_RiskLevelId)
-                .ForeignKey("dbo.RiskStatus", t => t.RiskStatus_RiskStatusId)
-                .ForeignKey("dbo.Services", t => t.Serivce_ServiceId)
+                .ForeignKey("dbo.ReferralSources", t => t.ReferralSourceId, cascadeDelete: true)
+                .ForeignKey("dbo.AbuserRelationships", t => t.AbuserRelationshipId, cascadeDelete: true)
+                .ForeignKey("dbo.RepeatClients", t => t.RepeatClientId, cascadeDelete: true)
+                .ForeignKey("dbo.RiskLevels", t => t.RiskLevelId, cascadeDelete: true)
+                .ForeignKey("dbo.RiskStatus", t => t.RiskStatusId, cascadeDelete: true)
+                .ForeignKey("dbo.Services", t => t.ServiceId, cascadeDelete: true)
                 .ForeignKey("dbo.Smarts", t => t.Smarts_SmartId)
-                .ForeignKey("dbo.Victims", t => t.VictimOfIncident_VictimId)
-                .Index(t => t.age_AgeId)
-                .Index(t => t.AssignedWorker_AssignedWorkerId)
-                .Index(t => t.Crisis_CrisisId)
-                .Index(t => t.DuplicateFile_DuplicateFileId)
-                .Index(t => t.File_FamilyViolenceFileId)
-                .Index(t => t.FileStatuse_FileStatusId)
-                .Index(t => t.FiscalYear_FiscalYearId)
-                .Index(t => t.Incident_IncidentId)
-                .Index(t => t.Program_ProgramId)
-                .Index(t => t.Race_EthnicityId)
+                .ForeignKey("dbo.Victims", t => t.VictimId, cascadeDelete: true)
+                .Index(t => t.FiscalYearId)
+                .Index(t => t.RiskLevelId)
+                .Index(t => t.CrisisId)
+                .Index(t => t.ServiceId)
+                .Index(t => t.ProgramId)
+                .Index(t => t.RiskStatusId)
+                .Index(t => t.AssignedWorkerId)
+                .Index(t => t.ReferralSourceId)
+                .Index(t => t.IncidentId)
+                .Index(t => t.AbuserRelationshipId)
+                .Index(t => t.VictimId)
+                .Index(t => t.FamilyViolenceFileId)
+                .Index(t => t.EthnicityId)
+                .Index(t => t.AgeId)
+                .Index(t => t.RepeatClientId)
+                .Index(t => t.DuplicateFileId)
+                .Index(t => t.FileStatusId)
                 .Index(t => t.ReferralContact_ReferralContactId)
-                .Index(t => t.ReferralSource_ReferralSourceId)
-                .Index(t => t.Relationship_AbuserRelationshipId)
-                .Index(t => t.Repeat_RepeatClientId)
-                .Index(t => t.RiskLevel_RiskLevelId)
-                .Index(t => t.RiskStatus_RiskStatusId)
-                .Index(t => t.Serivce_ServiceId)
-                .Index(t => t.Smarts_SmartId)
-                .Index(t => t.VictimOfIncident_VictimId);
+                .Index(t => t.Smarts_SmartId);
             
             CreateTable(
                 "dbo.Ages",
@@ -111,7 +112,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         AssignedWorkerId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        AssignedWorkerName = c.String(),
                     })
                 .PrimaryKey(t => t.AssignedWorkerId);
             
@@ -147,7 +148,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         FileStatusId = c.Int(nullable: false, identity: true),
-                        Status = c.String(),
+                        FileStatusString = c.String(),
                     })
                 .PrimaryKey(t => t.FileStatusId);
             
@@ -165,7 +166,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         IncidentId = c.Int(nullable: false, identity: true),
-                        Type = c.String(),
+                        IncidentType = c.String(),
                     })
                 .PrimaryKey(t => t.IncidentId);
             
@@ -462,7 +463,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         VictimId = c.Int(nullable: false, identity: true),
-                        Type = c.String(),
+                        VictimType = c.String(),
                     })
                 .PrimaryKey(t => t.VictimId);
             
@@ -470,7 +471,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Clients", "VictimOfIncident_VictimId", "dbo.Victims");
+            DropForeignKey("dbo.Clients", "VictimId", "dbo.Victims");
             DropForeignKey("dbo.Smarts", "VictimServices_VictimServicesAttendanceId", "dbo.VictimServicesAttendances");
             DropForeignKey("dbo.Smarts", "ThirdParty_ThirdPartyReportId", "dbo.ThirdPartyReports");
             DropForeignKey("dbo.Smarts", "SocialWorkAttendence_SocialWorkAttendanceId", "dbo.SocialWorkAttendances");
@@ -489,23 +490,23 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropForeignKey("dbo.Smarts", "CityResidence_CityResId", "dbo.CityRes");
             DropForeignKey("dbo.Smarts", "CityAssault_CityId", "dbo.Cities");
             DropForeignKey("dbo.Smarts", "BadDate_BadDateReportId", "dbo.BadDateReports");
-            DropForeignKey("dbo.Clients", "Serivce_ServiceId", "dbo.Services");
-            DropForeignKey("dbo.Clients", "RiskStatus_RiskStatusId", "dbo.RiskStatus");
-            DropForeignKey("dbo.Clients", "RiskLevel_RiskLevelId", "dbo.RiskLevels");
-            DropForeignKey("dbo.Clients", "Repeat_RepeatClientId", "dbo.RepeatClients");
-            DropForeignKey("dbo.Clients", "Relationship_AbuserRelationshipId", "dbo.AbuserRelationships");
-            DropForeignKey("dbo.Clients", "ReferralSource_ReferralSourceId", "dbo.ReferralSources");
+            DropForeignKey("dbo.Clients", "ServiceId", "dbo.Services");
+            DropForeignKey("dbo.Clients", "RiskStatusId", "dbo.RiskStatus");
+            DropForeignKey("dbo.Clients", "RiskLevelId", "dbo.RiskLevels");
+            DropForeignKey("dbo.Clients", "RepeatClientId", "dbo.RepeatClients");
+            DropForeignKey("dbo.Clients", "AbuserRelationshipId", "dbo.AbuserRelationships");
+            DropForeignKey("dbo.Clients", "ReferralSourceId", "dbo.ReferralSources");
             DropForeignKey("dbo.Clients", "ReferralContact_ReferralContactId", "dbo.ReferralContacts");
-            DropForeignKey("dbo.Clients", "Race_EthnicityId", "dbo.Ethnicities");
-            DropForeignKey("dbo.Clients", "Program_ProgramId", "dbo.Programs");
-            DropForeignKey("dbo.Clients", "Incident_IncidentId", "dbo.Incidents");
-            DropForeignKey("dbo.Clients", "FiscalYear_FiscalYearId", "dbo.FiscalYears");
-            DropForeignKey("dbo.Clients", "FileStatuse_FileStatusId", "dbo.FileStatus");
-            DropForeignKey("dbo.Clients", "File_FamilyViolenceFileId", "dbo.FamilyViolenceFiles");
-            DropForeignKey("dbo.Clients", "DuplicateFile_DuplicateFileId", "dbo.DuplicateFiles");
-            DropForeignKey("dbo.Clients", "Crisis_CrisisId", "dbo.Crises");
-            DropForeignKey("dbo.Clients", "AssignedWorker_AssignedWorkerId", "dbo.AssignedWorkers");
-            DropForeignKey("dbo.Clients", "age_AgeId", "dbo.Ages");
+            DropForeignKey("dbo.Clients", "EthnicityId", "dbo.Ethnicities");
+            DropForeignKey("dbo.Clients", "ProgramId", "dbo.Programs");
+            DropForeignKey("dbo.Clients", "IncidentId", "dbo.Incidents");
+            DropForeignKey("dbo.Clients", "FiscalYearId", "dbo.FiscalYears");
+            DropForeignKey("dbo.Clients", "FileStatusId", "dbo.FileStatus");
+            DropForeignKey("dbo.Clients", "FamilyViolenceFileId", "dbo.FamilyViolenceFiles");
+            DropForeignKey("dbo.Clients", "DuplicateFileId", "dbo.DuplicateFiles");
+            DropForeignKey("dbo.Clients", "CrisisId", "dbo.Crises");
+            DropForeignKey("dbo.Clients", "AssignedWorkerId", "dbo.AssignedWorkers");
+            DropForeignKey("dbo.Clients", "AgeId", "dbo.Ages");
             DropIndex("dbo.Smarts", new[] { "VictimServices_VictimServicesAttendanceId" });
             DropIndex("dbo.Smarts", new[] { "ThirdParty_ThirdPartyReportId" });
             DropIndex("dbo.Smarts", new[] { "SocialWorkAttendence_SocialWorkAttendanceId" });
@@ -523,25 +524,25 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropIndex("dbo.Smarts", new[] { "CityResidence_CityResId" });
             DropIndex("dbo.Smarts", new[] { "CityAssault_CityId" });
             DropIndex("dbo.Smarts", new[] { "BadDate_BadDateReportId" });
-            DropIndex("dbo.Clients", new[] { "VictimOfIncident_VictimId" });
             DropIndex("dbo.Clients", new[] { "Smarts_SmartId" });
-            DropIndex("dbo.Clients", new[] { "Serivce_ServiceId" });
-            DropIndex("dbo.Clients", new[] { "RiskStatus_RiskStatusId" });
-            DropIndex("dbo.Clients", new[] { "RiskLevel_RiskLevelId" });
-            DropIndex("dbo.Clients", new[] { "Repeat_RepeatClientId" });
-            DropIndex("dbo.Clients", new[] { "Relationship_AbuserRelationshipId" });
-            DropIndex("dbo.Clients", new[] { "ReferralSource_ReferralSourceId" });
             DropIndex("dbo.Clients", new[] { "ReferralContact_ReferralContactId" });
-            DropIndex("dbo.Clients", new[] { "Race_EthnicityId" });
-            DropIndex("dbo.Clients", new[] { "Program_ProgramId" });
-            DropIndex("dbo.Clients", new[] { "Incident_IncidentId" });
-            DropIndex("dbo.Clients", new[] { "FiscalYear_FiscalYearId" });
-            DropIndex("dbo.Clients", new[] { "FileStatuse_FileStatusId" });
-            DropIndex("dbo.Clients", new[] { "File_FamilyViolenceFileId" });
-            DropIndex("dbo.Clients", new[] { "DuplicateFile_DuplicateFileId" });
-            DropIndex("dbo.Clients", new[] { "Crisis_CrisisId" });
-            DropIndex("dbo.Clients", new[] { "AssignedWorker_AssignedWorkerId" });
-            DropIndex("dbo.Clients", new[] { "age_AgeId" });
+            DropIndex("dbo.Clients", new[] { "FileStatusId" });
+            DropIndex("dbo.Clients", new[] { "DuplicateFileId" });
+            DropIndex("dbo.Clients", new[] { "RepeatClientId" });
+            DropIndex("dbo.Clients", new[] { "AgeId" });
+            DropIndex("dbo.Clients", new[] { "EthnicityId" });
+            DropIndex("dbo.Clients", new[] { "FamilyViolenceFileId" });
+            DropIndex("dbo.Clients", new[] { "VictimId" });
+            DropIndex("dbo.Clients", new[] { "AbuserRelationshipId" });
+            DropIndex("dbo.Clients", new[] { "IncidentId" });
+            DropIndex("dbo.Clients", new[] { "ReferralSourceId" });
+            DropIndex("dbo.Clients", new[] { "AssignedWorkerId" });
+            DropIndex("dbo.Clients", new[] { "RiskStatusId" });
+            DropIndex("dbo.Clients", new[] { "ProgramId" });
+            DropIndex("dbo.Clients", new[] { "ServiceId" });
+            DropIndex("dbo.Clients", new[] { "CrisisId" });
+            DropIndex("dbo.Clients", new[] { "RiskLevelId" });
+            DropIndex("dbo.Clients", new[] { "FiscalYearId" });
             DropTable("dbo.Victims");
             DropTable("dbo.VictimServicesAttendances");
             DropTable("dbo.ThirdPartyReports");

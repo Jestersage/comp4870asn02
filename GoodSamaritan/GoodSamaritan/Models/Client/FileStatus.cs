@@ -8,7 +8,7 @@ namespace GoodSamaritan.Models.Client
     public class FileStatus
     {
         public int FileStatusId { get; set; }
-        public string Status { get; set; }
+        public string FileStatusString { get; set; }
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

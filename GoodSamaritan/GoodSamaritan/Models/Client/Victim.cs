@@ -9,7 +9,7 @@ namespace GoodSamaritan.Models.Client
     {
         public int VictimId {get; set;}
         //primary or secondary
-        public string Type { get; set; }
+        public string VictimType { get; set; }
 
         public virtual ICollection<Client> Clients { get; set; }
     }

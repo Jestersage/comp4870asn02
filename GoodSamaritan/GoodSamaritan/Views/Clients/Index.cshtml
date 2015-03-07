@@ -12,6 +12,57 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.age.AgeRange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedWorker.AssignedWorkerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Crisis.CrisisName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuplicateFile.IsDuplicate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.File.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileStatuse.FileStatusString)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FiscalYear.FiscalYearName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Incident.IncidentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Program.ProgramName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Race.Ethnictiy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferralSource.Source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Relationship.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RepeatClient.Repeat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskLevel.RiskLevelValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskStatus.RiskStatusValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serivce.ServiceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VictimOfIncident.VictimType)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Month)
         </th>
         <th>
@@ -34,6 +85,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RiskAccessmentAssignedTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Source)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AbuserSurname)
@@ -65,6 +119,57 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.age.AgeRange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedWorker.AssignedWorkerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Crisis.CrisisName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuplicateFile.IsDuplicate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.File.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileStatuse.FileStatusString)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FiscalYear.FiscalYearName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Incident.IncidentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Program.ProgramName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Race.Ethnictiy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferralSource.Source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Relationship.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepeatClient.Repeat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskLevel.RiskLevelValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskStatus.RiskStatusValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serivce.ServiceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VictimOfIncident.VictimType)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Month)
         </td>
         <td>
@@ -87,6 +192,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.RiskAccessmentAssignedTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Source)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AbuserSurname)

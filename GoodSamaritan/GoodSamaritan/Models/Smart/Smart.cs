@@ -16,14 +16,31 @@ namespace GoodSamaritan.Models.Smart
         public int ClientId { get; set; }
         public virtual ICollection<Client.Client> Clients { get; set; }
 
+        public int SexWorkExploitationId { get; set; }
         public virtual SexWorkExploitation Exploitation { get; set; } //Yes, No, N/A
+
+        public int MultiplePerpetratorId { get; set; }
         public virtual MultiplePerpetrator MultiPerp { get; set; } //Yes. No N/A
+
+        public int DrugFacilitatedAssaultId { get; set; }
         public virtual DrugFacilitatedAssault DrugAssault { get; set; } //Yes No N/A
+
+        public int CityId { get; set; }
         public virtual City CityAssault { get; set; }
+
+        public int CityResId { get; set; }
         public virtual CityRes CityResidence { get; set; }
+
         public int AccompanimentMinutes { get; set; }
+
+        public int HospitalId { get; set; }
         public virtual Hospital ReferringHospital { get; set; }
+
+        public int HospitalAttId { get; set; }
         public virtual HospitalAtt HospitalAttended { get; set; }
+
+
+
         public virtual SocialWorkAttendance SocialWorkAttendence { get; set; }//y/n/na
         public virtual PoliceAttendance PoliceAttendence { get; set; } //Lookup y/n/na
         public virtual VictimServicesAttendance VictimServices { get; set; }//Lookup

@@ -46,7 +46,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VictimId,Type")] Victim victim)
+        public ActionResult Create([Bind(Include = "VictimId,VictimType")] Victim victim)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VictimId,Type")] Victim victim)
+        public ActionResult Edit([Bind(Include = "VictimId,VictimType")] Victim victim)
         {
             if (ModelState.IsValid)
             {

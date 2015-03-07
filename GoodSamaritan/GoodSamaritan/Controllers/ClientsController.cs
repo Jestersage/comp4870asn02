@@ -17,7 +17,8 @@ namespace GoodSamaritan.Controllers
         // GET: Clients
         public ActionResult Index()
         {
-            return View(db.Clients.ToList());
+            var clients = db.Clients.Include(c => c.age).Include(c => c.AssignedWorker).Include(c => c.Crisis).Include(c => c.DuplicateFile).Include(c => c.File).Include(c => c.FileStatuse).Include(c => c.FiscalYear).Include(c => c.Incident).Include(c => c.Program).Include(c => c.Race).Include(c => c.ReferralSource).Include(c => c.Relationship).Include(c => c.RepeatClient).Include(c => c.RiskLevel).Include(c => c.RiskStatus).Include(c => c.Serivce).Include(c => c.VictimOfIncident);
+            return View(clients.ToList());
         }
 
         // GET: Clients/Details/5
@@ -38,6 +39,23 @@ namespace GoodSamaritan.Controllers
         // GET: Clients/Create
         public ActionResult Create()
         {
+            ViewBag.AgeId = new SelectList(db.Ages, "AgeId", "AgeRange");
+            ViewBag.AssignedWorkerId = new SelectList(db.AssignedWorkers, "AssignedWorkerId", "AssignedWorkerName");
+            ViewBag.CrisisId = new SelectList(db.Crises, "CrisisId", "CrisisName");
+            ViewBag.DuplicateFileId = new SelectList(db.DuplicateFiles, "DuplicateFileId", "IsDuplicate");
+            ViewBag.FamilyViolenceFileId = new SelectList(db.FamilyViolenceFiles, "FamilyViolenceFileId", "Status");
+            ViewBag.FileStatusId = new SelectList(db.FileStatus, "FileStatusId", "FileStatusString");
+            ViewBag.FiscalYearId = new SelectList(db.FiscalYears, "FiscalYearId", "FiscalYearName");
+            ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType");
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName");
+            ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy");
+            ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source");
+            ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type");
+            ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat");
+            ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "RiskLevelValue");
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "RiskStatusValue");
+            ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "ServiceName");
+            ViewBag.VictimId = new SelectList(db.Victims, "VictimId", "VictimType");
             return View();
         }
 
@@ -46,7 +64,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClientId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskAccessmentAssignedTo,AbuserSurname,AbuserFirstName,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,DateLastTransfer,DateClosed,DateReopened")] Client client)
+        public ActionResult Create([Bind(Include = "ClientId,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAccessmentAssignedTo,RiskStatusId,AssignedWorkerId,Source,ReferralSourceId,IncidentId,AbuserSurname,AbuserFirstName,AbuserRelationshipId,VictimId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,FileStatusId,DateLastTransfer,DateClosed,DateReopened")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +73,23 @@ namespace GoodSamaritan.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.AgeId = new SelectList(db.Ages, "AgeId", "AgeRange", client.AgeId);
+            ViewBag.AssignedWorkerId = new SelectList(db.AssignedWorkers, "AssignedWorkerId", "AssignedWorkerName", client.AssignedWorkerId);
+            ViewBag.CrisisId = new SelectList(db.Crises, "CrisisId", "CrisisName", client.CrisisId);
+            ViewBag.DuplicateFileId = new SelectList(db.DuplicateFiles, "DuplicateFileId", "IsDuplicate", client.DuplicateFileId);
+            ViewBag.FamilyViolenceFileId = new SelectList(db.FamilyViolenceFiles, "FamilyViolenceFileId", "Status", client.FamilyViolenceFileId);
+            ViewBag.FileStatusId = new SelectList(db.FileStatus, "FileStatusId", "FileStatusString", client.FileStatusId);
+            ViewBag.FiscalYearId = new SelectList(db.FiscalYears, "FiscalYearId", "FiscalYearName", client.FiscalYearId);
+            ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType", client.IncidentId);
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", client.ProgramId);
+            ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy", client.EthnicityId);
+            ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
+            ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type", client.AbuserRelationshipId);
+            ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat", client.RepeatClientId);
+            ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "RiskLevelValue", client.RiskLevelId);
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "RiskStatusValue", client.RiskStatusId);
+            ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "ServiceName", client.ServiceId);
+            ViewBag.VictimId = new SelectList(db.Victims, "VictimId", "VictimType", client.VictimId);
             return View(client);
         }
 
@@ -70,6 +105,23 @@ namespace GoodSamaritan.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AgeId = new SelectList(db.Ages, "AgeId", "AgeRange", client.AgeId);
+            ViewBag.AssignedWorkerId = new SelectList(db.AssignedWorkers, "AssignedWorkerId", "AssignedWorkerName", client.AssignedWorkerId);
+            ViewBag.CrisisId = new SelectList(db.Crises, "CrisisId", "CrisisName", client.CrisisId);
+            ViewBag.DuplicateFileId = new SelectList(db.DuplicateFiles, "DuplicateFileId", "IsDuplicate", client.DuplicateFileId);
+            ViewBag.FamilyViolenceFileId = new SelectList(db.FamilyViolenceFiles, "FamilyViolenceFileId", "Status", client.FamilyViolenceFileId);
+            ViewBag.FileStatusId = new SelectList(db.FileStatus, "FileStatusId", "FileStatusString", client.FileStatusId);
+            ViewBag.FiscalYearId = new SelectList(db.FiscalYears, "FiscalYearId", "FiscalYearName", client.FiscalYearId);
+            ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType", client.IncidentId);
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", client.ProgramId);
+            ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy", client.EthnicityId);
+            ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
+            ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type", client.AbuserRelationshipId);
+            ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat", client.RepeatClientId);
+            ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "RiskLevelValue", client.RiskLevelId);
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "RiskStatusValue", client.RiskStatusId);
+            ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "ServiceName", client.ServiceId);
+            ViewBag.VictimId = new SelectList(db.Victims, "VictimId", "VictimType", client.VictimId);
             return View(client);
         }
 
@@ -78,7 +130,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClientId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskAccessmentAssignedTo,AbuserSurname,AbuserFirstName,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,DateLastTransfer,DateClosed,DateReopened")] Client client)
+        public ActionResult Edit([Bind(Include = "ClientId,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAccessmentAssignedTo,RiskStatusId,AssignedWorkerId,Source,ReferralSourceId,IncidentId,AbuserSurname,AbuserFirstName,AbuserRelationshipId,VictimId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,FileStatusId,DateLastTransfer,DateClosed,DateReopened")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +138,23 @@ namespace GoodSamaritan.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AgeId = new SelectList(db.Ages, "AgeId", "AgeRange", client.AgeId);
+            ViewBag.AssignedWorkerId = new SelectList(db.AssignedWorkers, "AssignedWorkerId", "AssignedWorkerName", client.AssignedWorkerId);
+            ViewBag.CrisisId = new SelectList(db.Crises, "CrisisId", "CrisisName", client.CrisisId);
+            ViewBag.DuplicateFileId = new SelectList(db.DuplicateFiles, "DuplicateFileId", "IsDuplicate", client.DuplicateFileId);
+            ViewBag.FamilyViolenceFileId = new SelectList(db.FamilyViolenceFiles, "FamilyViolenceFileId", "Status", client.FamilyViolenceFileId);
+            ViewBag.FileStatusId = new SelectList(db.FileStatus, "FileStatusId", "FileStatusString", client.FileStatusId);
+            ViewBag.FiscalYearId = new SelectList(db.FiscalYears, "FiscalYearId", "FiscalYearName", client.FiscalYearId);
+            ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType", client.IncidentId);
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", client.ProgramId);
+            ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy", client.EthnicityId);
+            ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
+            ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type", client.AbuserRelationshipId);
+            ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat", client.RepeatClientId);
+            ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "RiskLevelValue", client.RiskLevelId);
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "RiskStatusValue", client.RiskStatusId);
+            ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "ServiceName", client.ServiceId);
+            ViewBag.VictimId = new SelectList(db.Victims, "VictimId", "VictimType", client.VictimId);
             return View(client);
         }
 

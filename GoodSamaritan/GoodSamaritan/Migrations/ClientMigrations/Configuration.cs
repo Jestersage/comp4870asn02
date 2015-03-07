@@ -71,9 +71,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
             context.RiskLevels.AddOrUpdate(
                   risk => risk.RiskLevelValue,
+                  new RiskLevel { RiskLevelValue = "" },
                   new RiskLevel { RiskLevelValue = "High" },
-                  new RiskLevel { RiskLevelValue = "DVU" },
-                  new RiskLevel { RiskLevelValue = "" }
+                  new RiskLevel { RiskLevelValue = "DVU" }
             );
             context.SaveChanges();
             context.Crises.AddOrUpdate(
@@ -86,8 +86,8 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
             context.Services.AddOrUpdate(
                   ser => ser.ServiceName,
-                  new Service { ServiceName = "File" },
-                  new Service { ServiceName = "N/A" }
+                  new Service { ServiceName = "N/A" },
+                  new Service { ServiceName = "File" }
             );
             context.SaveChanges();
 
@@ -106,24 +106,26 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
             context.RiskStatus.AddOrUpdate(
                   risks => risks.RiskStatusValue,
-                  new RiskStatus { RiskStatusValue = "File" },
-                  new RiskStatus { RiskStatusValue = "N/A" }
+                  new RiskStatus { RiskStatusValue = "" },
+                  new RiskStatus { RiskStatusValue = "Pending" },
+                  new RiskStatus { RiskStatusValue = "Complete" }
             );
             context.SaveChanges();
 
             //Michelle; Tyra; Louise; Angela; Dave; Troy; Michael; Manpreet; Patrick; None
             context.AssignedWorkers.AddOrUpdate(
-                  aw => aw.Name,
-                  new AssignedWorker { Name = "Michelle" },
-                  new AssignedWorker { Name = "Tyra" },
-                  new AssignedWorker { Name = "Louise" },
-                  new AssignedWorker { Name = "Angela" },
-                  new AssignedWorker { Name = "Dave" },
-                  new AssignedWorker { Name = "Troy" },
-                  new AssignedWorker { Name = "Michael" },
-                  new AssignedWorker { Name = "Manpreet" },
-                  new AssignedWorker { Name = "Patrick" },
-                  new AssignedWorker { Name = "None" }
+                  aw => aw.AssignedWorkerName,
+                  new AssignedWorker { AssignedWorkerName = "None" },
+                  new AssignedWorker { AssignedWorkerName = "Michelle" },
+                  new AssignedWorker { AssignedWorkerName = "Tyra" },
+                  new AssignedWorker { AssignedWorkerName = "Louise" },
+                  new AssignedWorker { AssignedWorkerName = "Angela" },
+                  new AssignedWorker { AssignedWorkerName = "Dave" },
+                  new AssignedWorker { AssignedWorkerName = "Troy" },
+                  new AssignedWorker { AssignedWorkerName = "Michael" },
+                  new AssignedWorker { AssignedWorkerName = "Manpreet" },
+                  new AssignedWorker { AssignedWorkerName = "Patrick" }
+                  
             );
             context.SaveChanges();
 
@@ -159,22 +161,22 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             //Other Crime – DV; Other Familial Assault; Threatening;
             //Youth Sexual Assault/Exploitation
             context.Incidents.AddOrUpdate(
-                  inci => inci.Type,
-                  new Incident { Type = "Abduction" },
-                  new Incident { Type = "Adult Historical Sexual Assault" },
-                  new Incident { Type = "Adult Sexual Assault" },
-                  new Incident { Type = "Partner Assault" },
-                  new Incident { Type = "Attempted Murder" },
-                  new Incident { Type = "Child Physical Assault" },
-                  new Incident { Type = "Child Sexual Abuse/Exploitation" },
-                  new Incident { Type = "Murder" },
-                  new Incident { Type = "N/A" },
-                  new Incident { Type = "Other" },
-                  new Incident { Type = "Other Assault" },
-                  new Incident { Type = "Other Crime – DV" },
-                  new Incident { Type = "Other Familial Assault" },
-                  new Incident { Type = "Threatening" },
-                  new Incident { Type = "Youth Sexual Assault/Exploitation" }
+                  inci => inci.IncidentType,
+                  new Incident { IncidentType = "Abduction" },
+                  new Incident { IncidentType = "Adult Historical Sexual Assault" },
+                  new Incident { IncidentType = "Adult Sexual Assault" },
+                  new Incident { IncidentType = "Partner Assault" },
+                  new Incident { IncidentType = "Attempted Murder" },
+                  new Incident { IncidentType = "Child Physical Assault" },
+                  new Incident { IncidentType = "Child Sexual Abuse/Exploitation" },
+                  new Incident { IncidentType = "Murder" },
+                  new Incident { IncidentType = "N/A" },
+                  new Incident { IncidentType = "Other" },
+                  new Incident { IncidentType = "Other Assault" },
+                  new Incident { IncidentType = "Other Crime – DV" },
+                  new Incident { IncidentType = "Other Familial Assault" },
+                  new Incident { IncidentType = "Threatening" },
+                  new Incident { IncidentType = "Youth Sexual Assault/Exploitation" }
             );
             context.SaveChanges();
 
@@ -200,17 +202,17 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             context.SaveChanges();
 
             context.Victims.AddOrUpdate(
-                 vic => vic.Type,
-                 new Victim { Type = "Primary" },
-                 new Victim { Type = "Secondary" }
+                 vic => vic.VictimType,
+                 new Victim { VictimType = "Primary" },
+                 new Victim { VictimType = "Secondary" }
            );
             context.SaveChanges();
 
             context.FamilyViolenceFiles.AddOrUpdate(
                  fvf => fvf.Status,
+                 new FamilyViolenceFile { Status = "N/A" },
                  new FamilyViolenceFile { Status = "Yes" },
-                 new FamilyViolenceFile { Status = "No" },
-                 new FamilyViolenceFile { Status = "N/A" }
+                 new FamilyViolenceFile { Status = "No" }
             );
             context.SaveChanges();
 
@@ -257,9 +259,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             context.SaveChanges();
 
             context.FileStatus.AddOrUpdate(
-                 files => files.Status,
-                 new FileStatus { Status = "Yes" },
-                 new FileStatus { Status = "" }
+                 files => files.FileStatusString,
+                 new FileStatus { FileStatusString = "Yes" },
+                 new FileStatus { FileStatusString = "" }
             );
             context.SaveChanges();
 

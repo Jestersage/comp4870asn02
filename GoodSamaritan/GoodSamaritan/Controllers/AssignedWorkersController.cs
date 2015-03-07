@@ -46,7 +46,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AssignedWorkerId,Name")] AssignedWorker assignedWorker)
+        public ActionResult Create([Bind(Include = "AssignedWorkerId,AssignedWorkerName")] AssignedWorker assignedWorker)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssignedWorkerId,Name")] AssignedWorker assignedWorker)
+        public ActionResult Edit([Bind(Include = "AssignedWorkerId,AssignedWorkerName")] AssignedWorker assignedWorker)
         {
             if (ModelState.IsValid)
             {

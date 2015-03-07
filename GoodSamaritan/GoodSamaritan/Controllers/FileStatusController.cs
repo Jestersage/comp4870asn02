@@ -46,7 +46,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FileStatusId,Status")] FileStatus fileStatus)
+        public ActionResult Create([Bind(Include = "FileStatusId,FileStatusString")] FileStatus fileStatus)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FileStatusId,Status")] FileStatus fileStatus)
+        public ActionResult Edit([Bind(Include = "FileStatusId,FileStatusString")] FileStatus fileStatus)
         {
             if (ModelState.IsValid)
             {

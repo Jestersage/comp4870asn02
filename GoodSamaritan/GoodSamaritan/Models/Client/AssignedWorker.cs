@@ -10,7 +10,7 @@ namespace GoodSamaritan.Models.Client
         public int AssignedWorkerId { get; set; }
 
         //Michelle; Tyra; Louise; Angela; Dave; Troy; Michael; Manpreet; Patrick; None
-        public string Name { get; set; }
+        public string AssignedWorkerName { get; set; }
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

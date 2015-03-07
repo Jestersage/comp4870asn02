@@ -27,6 +27,8 @@ C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\S
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.WebPages.dll
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.WebPages.Razor.dll
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\WebGrease.dll
+C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\EntityFramework.xml
+C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\EntityFramework.SqlServer.xml
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.Helpers.xml
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.Mvc.xml
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.Optimization.xml
@@ -36,8 +38,6 @@ C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\S
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.WebPages.Razor.xml
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\Antlr3.Runtime.pdb
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\Newtonsoft.Json.xml
-C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\EntityFramework.xml
-C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\EntityFramework.SqlServer.xml
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\Microsoft.AspNet.Identity.EntityFramework.xml
