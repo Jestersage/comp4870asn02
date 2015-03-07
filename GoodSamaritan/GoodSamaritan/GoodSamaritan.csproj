@@ -164,30 +164,48 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AgesController.cs" />
     <Compile Include="Controllers\AssignedWorkersController.cs" />
+    <Compile Include="Controllers\BadDateReportsController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\CityResController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\CrisesController.cs" />
+    <Compile Include="Controllers\DrugFacilitatedAssaultsController.cs" />
     <Compile Include="Controllers\DuplicateFilesController.cs" />
     <Compile Include="Controllers\EthnicitiesController.cs" />
+    <Compile Include="Controllers\EvidenceStoredsController.cs" />
     <Compile Include="Controllers\FamilyViolenceFilesController.cs" />
     <Compile Include="Controllers\FileStatusController.cs" />
     <Compile Include="Controllers\FiscalYearsController.cs" />
+    <Compile Include="Controllers\HIVMedsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HospitalAttsController.cs" />
+    <Compile Include="Controllers\HospitalsController.cs" />
     <Compile Include="Controllers\IncidentsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MedicalOnliesController.cs" />
+    <Compile Include="Controllers\MultiplePerpetratorsController.cs" />
+    <Compile Include="Controllers\PoliceAttendancesController.cs" />
+    <Compile Include="Controllers\PoliceReportedsController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
+    <Compile Include="Controllers\ReferCBVSController.cs" />
     <Compile Include="Controllers\ReferralContactsController.cs" />
     <Compile Include="Controllers\ReferralSourcesController.cs" />
     <Compile Include="Controllers\RepeatClientsController.cs" />
     <Compile Include="Controllers\RiskLevelsController.cs" />
     <Compile Include="Controllers\RiskStatusController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\SexWorkExploitationsController.cs" />
+    <Compile Include="Controllers\SmartsController.cs" />
+    <Compile Include="Controllers\SocialWorkAttendancesController.cs" />
+    <Compile Include="Controllers\ThirdPartyReportsController.cs" />
     <Compile Include="Controllers\VictimsController.cs" />
+    <Compile Include="Controllers\VictimServicesAttendancesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503062333289_InitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503062333289_InitialCreate.Designer.cs">
-      <DependentUpon>201503062333289_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503070121073_InitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503070121073_InitialCreate.Designer.cs">
+      <DependentUpon>201503070121073_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
@@ -490,8 +508,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503062333289_InitialCreate.resx">
-      <DependentUpon>201503062333289_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503070121073_InitialCreate.resx">
+      <DependentUpon>201503070121073_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

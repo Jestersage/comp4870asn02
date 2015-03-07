@@ -248,62 +248,62 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     {
                         SmartId = c.Int(nullable: false, identity: true),
                         ClientId = c.Int(nullable: false),
+                        SexWorkExploitationId = c.Int(nullable: false),
+                        MultiplePerpetratorId = c.Int(nullable: false),
+                        DrugFacilitatedAssaultId = c.Int(nullable: false),
+                        CityId = c.Int(nullable: false),
+                        CityResId = c.Int(nullable: false),
                         AccompanimentMinutes = c.Int(nullable: false),
+                        HospitalId = c.Int(nullable: false),
+                        HospitalAttId = c.Int(nullable: false),
+                        SocialWorkAttendanceId = c.Int(nullable: false),
+                        PoliceAttendanceId = c.Int(nullable: false),
+                        VictimServicesAttendanceId = c.Int(nullable: false),
+                        MedicalOnlyId = c.Int(nullable: false),
+                        EvidenceStoredId = c.Int(nullable: false),
+                        HIVMedsId = c.Int(nullable: false),
+                        ReferCBVSId = c.Int(nullable: false),
+                        PoliceReportedId = c.Int(nullable: false),
+                        ThirdPartyReportId = c.Int(nullable: false),
+                        BadDateReportId = c.Int(nullable: false),
                         NumTransportProvided = c.Int(nullable: false),
                         ReferToNurse = c.Boolean(nullable: false),
-                        BadDate_BadDateReportId = c.Int(),
-                        CityAssault_CityId = c.Int(),
-                        CityResidence_CityResId = c.Int(),
-                        DrugAssault_DrugFacilitatedAssaultId = c.Int(),
-                        Evidence_EvidenceStoredId = c.Int(),
-                        Exploitation_SexWorkExploitationId = c.Int(),
-                        HIVMeds_HIVMedsId = c.Int(),
-                        HospitalAttended_HospitalAttId = c.Int(),
-                        MedicalOnly_MedicalOnlyId = c.Int(),
-                        MultiPerp_MultiplePerpetratorId = c.Int(),
-                        PoliceAttendence_PoliceAttendanceId = c.Int(),
-                        PoliceReported_PoliceReportedId = c.Int(),
-                        ReferCBVS_ReferCBVSId = c.Int(),
-                        ReferringHospital_HospitalId = c.Int(),
-                        SocialWorkAttendence_SocialWorkAttendanceId = c.Int(),
-                        ThirdParty_ThirdPartyReportId = c.Int(),
-                        VictimServices_VictimServicesAttendanceId = c.Int(),
                     })
                 .PrimaryKey(t => t.SmartId)
-                .ForeignKey("dbo.BadDateReports", t => t.BadDate_BadDateReportId)
-                .ForeignKey("dbo.Cities", t => t.CityAssault_CityId)
-                .ForeignKey("dbo.CityRes", t => t.CityResidence_CityResId)
-                .ForeignKey("dbo.DrugFacilitatedAssaults", t => t.DrugAssault_DrugFacilitatedAssaultId)
-                .ForeignKey("dbo.EvidenceStoreds", t => t.Evidence_EvidenceStoredId)
-                .ForeignKey("dbo.SexWorkExploitations", t => t.Exploitation_SexWorkExploitationId)
-                .ForeignKey("dbo.HIVMeds", t => t.HIVMeds_HIVMedsId)
-                .ForeignKey("dbo.HospitalAtts", t => t.HospitalAttended_HospitalAttId)
-                .ForeignKey("dbo.MedicalOnlies", t => t.MedicalOnly_MedicalOnlyId)
-                .ForeignKey("dbo.MultiplePerpetrators", t => t.MultiPerp_MultiplePerpetratorId)
-                .ForeignKey("dbo.PoliceAttendances", t => t.PoliceAttendence_PoliceAttendanceId)
-                .ForeignKey("dbo.PoliceReporteds", t => t.PoliceReported_PoliceReportedId)
-                .ForeignKey("dbo.ReferCBVS", t => t.ReferCBVS_ReferCBVSId)
-                .ForeignKey("dbo.Hospitals", t => t.ReferringHospital_HospitalId)
-                .ForeignKey("dbo.SocialWorkAttendances", t => t.SocialWorkAttendence_SocialWorkAttendanceId)
-                .ForeignKey("dbo.ThirdPartyReports", t => t.ThirdParty_ThirdPartyReportId)
-                .ForeignKey("dbo.VictimServicesAttendances", t => t.VictimServices_VictimServicesAttendanceId)
-                .Index(t => t.BadDate_BadDateReportId)
-                .Index(t => t.CityAssault_CityId)
-                .Index(t => t.CityResidence_CityResId)
-                .Index(t => t.DrugAssault_DrugFacilitatedAssaultId)
-                .Index(t => t.Evidence_EvidenceStoredId)
-                .Index(t => t.Exploitation_SexWorkExploitationId)
-                .Index(t => t.HIVMeds_HIVMedsId)
-                .Index(t => t.HospitalAttended_HospitalAttId)
-                .Index(t => t.MedicalOnly_MedicalOnlyId)
-                .Index(t => t.MultiPerp_MultiplePerpetratorId)
-                .Index(t => t.PoliceAttendence_PoliceAttendanceId)
-                .Index(t => t.PoliceReported_PoliceReportedId)
-                .Index(t => t.ReferCBVS_ReferCBVSId)
-                .Index(t => t.ReferringHospital_HospitalId)
-                .Index(t => t.SocialWorkAttendence_SocialWorkAttendanceId)
-                .Index(t => t.ThirdParty_ThirdPartyReportId)
-                .Index(t => t.VictimServices_VictimServicesAttendanceId);
+                .ForeignKey("dbo.BadDateReports", t => t.BadDateReportId, cascadeDelete: true)
+                .ForeignKey("dbo.Cities", t => t.CityId, cascadeDelete: true)
+                .ForeignKey("dbo.CityRes", t => t.CityResId, cascadeDelete: true)
+                .ForeignKey("dbo.DrugFacilitatedAssaults", t => t.DrugFacilitatedAssaultId, cascadeDelete: true)
+                .ForeignKey("dbo.EvidenceStoreds", t => t.EvidenceStoredId, cascadeDelete: true)
+                .ForeignKey("dbo.SexWorkExploitations", t => t.SexWorkExploitationId, cascadeDelete: true)
+                .ForeignKey("dbo.HIVMeds", t => t.HIVMedsId, cascadeDelete: true)
+                .ForeignKey("dbo.HospitalAtts", t => t.HospitalAttId, cascadeDelete: true)
+                .ForeignKey("dbo.MedicalOnlies", t => t.MedicalOnlyId, cascadeDelete: true)
+                .ForeignKey("dbo.MultiplePerpetrators", t => t.MultiplePerpetratorId, cascadeDelete: true)
+                .ForeignKey("dbo.PoliceAttendances", t => t.PoliceAttendanceId, cascadeDelete: true)
+                .ForeignKey("dbo.PoliceReporteds", t => t.PoliceReportedId, cascadeDelete: true)
+                .ForeignKey("dbo.ReferCBVS", t => t.ReferCBVSId, cascadeDelete: true)
+                .ForeignKey("dbo.Hospitals", t => t.HospitalId, cascadeDelete: true)
+                .ForeignKey("dbo.SocialWorkAttendances", t => t.SocialWorkAttendanceId, cascadeDelete: true)
+                .ForeignKey("dbo.ThirdPartyReports", t => t.ThirdPartyReportId, cascadeDelete: true)
+                .ForeignKey("dbo.VictimServicesAttendances", t => t.VictimServicesAttendanceId, cascadeDelete: true)
+                .Index(t => t.SexWorkExploitationId)
+                .Index(t => t.MultiplePerpetratorId)
+                .Index(t => t.DrugFacilitatedAssaultId)
+                .Index(t => t.CityId)
+                .Index(t => t.CityResId)
+                .Index(t => t.HospitalId)
+                .Index(t => t.HospitalAttId)
+                .Index(t => t.SocialWorkAttendanceId)
+                .Index(t => t.PoliceAttendanceId)
+                .Index(t => t.VictimServicesAttendanceId)
+                .Index(t => t.MedicalOnlyId)
+                .Index(t => t.EvidenceStoredId)
+                .Index(t => t.HIVMedsId)
+                .Index(t => t.ReferCBVSId)
+                .Index(t => t.PoliceReportedId)
+                .Index(t => t.ThirdPartyReportId)
+                .Index(t => t.BadDateReportId);
             
             CreateTable(
                 "dbo.BadDateReports",
@@ -472,24 +472,24 @@ namespace GoodSamaritan.Migrations.ClientMigrations
         public override void Down()
         {
             DropForeignKey("dbo.Clients", "VictimId", "dbo.Victims");
-            DropForeignKey("dbo.Smarts", "VictimServices_VictimServicesAttendanceId", "dbo.VictimServicesAttendances");
-            DropForeignKey("dbo.Smarts", "ThirdParty_ThirdPartyReportId", "dbo.ThirdPartyReports");
-            DropForeignKey("dbo.Smarts", "SocialWorkAttendence_SocialWorkAttendanceId", "dbo.SocialWorkAttendances");
-            DropForeignKey("dbo.Smarts", "ReferringHospital_HospitalId", "dbo.Hospitals");
-            DropForeignKey("dbo.Smarts", "ReferCBVS_ReferCBVSId", "dbo.ReferCBVS");
-            DropForeignKey("dbo.Smarts", "PoliceReported_PoliceReportedId", "dbo.PoliceReporteds");
-            DropForeignKey("dbo.Smarts", "PoliceAttendence_PoliceAttendanceId", "dbo.PoliceAttendances");
-            DropForeignKey("dbo.Smarts", "MultiPerp_MultiplePerpetratorId", "dbo.MultiplePerpetrators");
-            DropForeignKey("dbo.Smarts", "MedicalOnly_MedicalOnlyId", "dbo.MedicalOnlies");
-            DropForeignKey("dbo.Smarts", "HospitalAttended_HospitalAttId", "dbo.HospitalAtts");
-            DropForeignKey("dbo.Smarts", "HIVMeds_HIVMedsId", "dbo.HIVMeds");
-            DropForeignKey("dbo.Smarts", "Exploitation_SexWorkExploitationId", "dbo.SexWorkExploitations");
-            DropForeignKey("dbo.Smarts", "Evidence_EvidenceStoredId", "dbo.EvidenceStoreds");
-            DropForeignKey("dbo.Smarts", "DrugAssault_DrugFacilitatedAssaultId", "dbo.DrugFacilitatedAssaults");
+            DropForeignKey("dbo.Smarts", "VictimServicesAttendanceId", "dbo.VictimServicesAttendances");
+            DropForeignKey("dbo.Smarts", "ThirdPartyReportId", "dbo.ThirdPartyReports");
+            DropForeignKey("dbo.Smarts", "SocialWorkAttendanceId", "dbo.SocialWorkAttendances");
+            DropForeignKey("dbo.Smarts", "HospitalId", "dbo.Hospitals");
+            DropForeignKey("dbo.Smarts", "ReferCBVSId", "dbo.ReferCBVS");
+            DropForeignKey("dbo.Smarts", "PoliceReportedId", "dbo.PoliceReporteds");
+            DropForeignKey("dbo.Smarts", "PoliceAttendanceId", "dbo.PoliceAttendances");
+            DropForeignKey("dbo.Smarts", "MultiplePerpetratorId", "dbo.MultiplePerpetrators");
+            DropForeignKey("dbo.Smarts", "MedicalOnlyId", "dbo.MedicalOnlies");
+            DropForeignKey("dbo.Smarts", "HospitalAttId", "dbo.HospitalAtts");
+            DropForeignKey("dbo.Smarts", "HIVMedsId", "dbo.HIVMeds");
+            DropForeignKey("dbo.Smarts", "SexWorkExploitationId", "dbo.SexWorkExploitations");
+            DropForeignKey("dbo.Smarts", "EvidenceStoredId", "dbo.EvidenceStoreds");
+            DropForeignKey("dbo.Smarts", "DrugFacilitatedAssaultId", "dbo.DrugFacilitatedAssaults");
             DropForeignKey("dbo.Clients", "Smarts_SmartId", "dbo.Smarts");
-            DropForeignKey("dbo.Smarts", "CityResidence_CityResId", "dbo.CityRes");
-            DropForeignKey("dbo.Smarts", "CityAssault_CityId", "dbo.Cities");
-            DropForeignKey("dbo.Smarts", "BadDate_BadDateReportId", "dbo.BadDateReports");
+            DropForeignKey("dbo.Smarts", "CityResId", "dbo.CityRes");
+            DropForeignKey("dbo.Smarts", "CityId", "dbo.Cities");
+            DropForeignKey("dbo.Smarts", "BadDateReportId", "dbo.BadDateReports");
             DropForeignKey("dbo.Clients", "ServiceId", "dbo.Services");
             DropForeignKey("dbo.Clients", "RiskStatusId", "dbo.RiskStatus");
             DropForeignKey("dbo.Clients", "RiskLevelId", "dbo.RiskLevels");
@@ -507,23 +507,23 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropForeignKey("dbo.Clients", "CrisisId", "dbo.Crises");
             DropForeignKey("dbo.Clients", "AssignedWorkerId", "dbo.AssignedWorkers");
             DropForeignKey("dbo.Clients", "AgeId", "dbo.Ages");
-            DropIndex("dbo.Smarts", new[] { "VictimServices_VictimServicesAttendanceId" });
-            DropIndex("dbo.Smarts", new[] { "ThirdParty_ThirdPartyReportId" });
-            DropIndex("dbo.Smarts", new[] { "SocialWorkAttendence_SocialWorkAttendanceId" });
-            DropIndex("dbo.Smarts", new[] { "ReferringHospital_HospitalId" });
-            DropIndex("dbo.Smarts", new[] { "ReferCBVS_ReferCBVSId" });
-            DropIndex("dbo.Smarts", new[] { "PoliceReported_PoliceReportedId" });
-            DropIndex("dbo.Smarts", new[] { "PoliceAttendence_PoliceAttendanceId" });
-            DropIndex("dbo.Smarts", new[] { "MultiPerp_MultiplePerpetratorId" });
-            DropIndex("dbo.Smarts", new[] { "MedicalOnly_MedicalOnlyId" });
-            DropIndex("dbo.Smarts", new[] { "HospitalAttended_HospitalAttId" });
-            DropIndex("dbo.Smarts", new[] { "HIVMeds_HIVMedsId" });
-            DropIndex("dbo.Smarts", new[] { "Exploitation_SexWorkExploitationId" });
-            DropIndex("dbo.Smarts", new[] { "Evidence_EvidenceStoredId" });
-            DropIndex("dbo.Smarts", new[] { "DrugAssault_DrugFacilitatedAssaultId" });
-            DropIndex("dbo.Smarts", new[] { "CityResidence_CityResId" });
-            DropIndex("dbo.Smarts", new[] { "CityAssault_CityId" });
-            DropIndex("dbo.Smarts", new[] { "BadDate_BadDateReportId" });
+            DropIndex("dbo.Smarts", new[] { "BadDateReportId" });
+            DropIndex("dbo.Smarts", new[] { "ThirdPartyReportId" });
+            DropIndex("dbo.Smarts", new[] { "PoliceReportedId" });
+            DropIndex("dbo.Smarts", new[] { "ReferCBVSId" });
+            DropIndex("dbo.Smarts", new[] { "HIVMedsId" });
+            DropIndex("dbo.Smarts", new[] { "EvidenceStoredId" });
+            DropIndex("dbo.Smarts", new[] { "MedicalOnlyId" });
+            DropIndex("dbo.Smarts", new[] { "VictimServicesAttendanceId" });
+            DropIndex("dbo.Smarts", new[] { "PoliceAttendanceId" });
+            DropIndex("dbo.Smarts", new[] { "SocialWorkAttendanceId" });
+            DropIndex("dbo.Smarts", new[] { "HospitalAttId" });
+            DropIndex("dbo.Smarts", new[] { "HospitalId" });
+            DropIndex("dbo.Smarts", new[] { "CityResId" });
+            DropIndex("dbo.Smarts", new[] { "CityId" });
+            DropIndex("dbo.Smarts", new[] { "DrugFacilitatedAssaultId" });
+            DropIndex("dbo.Smarts", new[] { "MultiplePerpetratorId" });
+            DropIndex("dbo.Smarts", new[] { "SexWorkExploitationId" });
             DropIndex("dbo.Clients", new[] { "Smarts_SmartId" });
             DropIndex("dbo.Clients", new[] { "ReferralContact_ReferralContactId" });
             DropIndex("dbo.Clients", new[] { "FileStatusId" });
