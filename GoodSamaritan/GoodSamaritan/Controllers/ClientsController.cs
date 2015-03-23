@@ -10,6 +10,7 @@ using GoodSamaritan.Models.Client;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ClientsController : Controller
     {
         private ClientContext db = new ClientContext();
@@ -17,7 +18,7 @@ namespace GoodSamaritan.Controllers
         // GET: Clients
         public ActionResult Index()
         {
-            var clients = db.Clients.Include(c => c.age).Include(c => c.AssignedWorker).Include(c => c.Crisis).Include(c => c.DuplicateFile).Include(c => c.File).Include(c => c.FileStatuse).Include(c => c.FiscalYear).Include(c => c.Incident).Include(c => c.Program).Include(c => c.Race).Include(c => c.ReferralSource).Include(c => c.Relationship).Include(c => c.RepeatClient).Include(c => c.RiskLevel).Include(c => c.RiskStatus).Include(c => c.Serivce).Include(c => c.VictimOfIncident);
+            var clients = db.Clients.Include(c => c.age).Include(c => c.AssignedWorker).Include(c => c.Crisis).Include(c => c.DuplicateFile).Include(c => c.File).Include(c => c.FileStatuse).Include(c => c.FiscalYear).Include(c => c.Incident).Include(c => c.Program).Include(c => c.Race).Include(c => c.ReferralContact).Include(c => c.ReferralSource).Include(c => c.Relationship).Include(c => c.RepeatClient).Include(c => c.RiskLevel).Include(c => c.RiskStatus).Include(c => c.Serivce).Include(c => c.VictimOfIncident);
             return View(clients.ToList());
         }
 
@@ -49,6 +50,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType");
             ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName");
             ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy");
+            ViewBag.ReferralContactId = new SelectList(db.ReferralContacts, "ReferralContactId", "ReferralContactName");
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source");
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type");
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat");
@@ -64,7 +66,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClientId,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAccessmentAssignedTo,RiskStatusId,AssignedWorkerId,Source,ReferralSourceId,IncidentId,AbuserSurname,AbuserFirstName,AbuserRelationshipId,VictimId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,FileStatusId,DateLastTransfer,DateClosed,DateReopened")] Client client)
+        public ActionResult Create([Bind(Include = "ClientId,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAccessmentAssignedTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,ReferralContactId,IncidentId,AbuserSurname,AbuserFirstName,AbuserRelationshipId,VictimId,FamilyViolenceFileId,Gender,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,FileStatusId,DateLastTransfer,DateClosed,DateReopened")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -83,6 +85,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType", client.IncidentId);
             ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", client.ProgramId);
             ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy", client.EthnicityId);
+            ViewBag.ReferralContactId = new SelectList(db.ReferralContacts, "ReferralContactId", "ReferralContactName", client.ReferralContactId);
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type", client.AbuserRelationshipId);
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat", client.RepeatClientId);
@@ -115,6 +118,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType", client.IncidentId);
             ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", client.ProgramId);
             ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy", client.EthnicityId);
+            ViewBag.ReferralContactId = new SelectList(db.ReferralContacts, "ReferralContactId", "ReferralContactName", client.ReferralContactId);
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type", client.AbuserRelationshipId);
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat", client.RepeatClientId);
@@ -130,7 +134,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClientId,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAccessmentAssignedTo,RiskStatusId,AssignedWorkerId,Source,ReferralSourceId,IncidentId,AbuserSurname,AbuserFirstName,AbuserRelationshipId,VictimId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,FileStatusId,DateLastTransfer,DateClosed,DateReopened")] Client client)
+        public ActionResult Edit([Bind(Include = "ClientId,FiscalYearId,Month,Day,Surname,FirstName,PoliceFileNum,CourtFileNum,SWCFileNum,RiskLevelId,CrisisId,ServiceId,ProgramId,RiskAccessmentAssignedTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,ReferralContactId,IncidentId,AbuserSurname,AbuserFirstName,AbuserRelationshipId,VictimId,FamilyViolenceFileId,Gender,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenAgeZeroSix,NumChildrenAgeSevenTweleve,NumChildrenAgeTeens,FileStatusId,DateLastTransfer,DateClosed,DateReopened")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -148,6 +152,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.IncidentId = new SelectList(db.Incidents, "IncidentId", "IncidentType", client.IncidentId);
             ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", client.ProgramId);
             ViewBag.EthnicityId = new SelectList(db.Ethnicities, "EthnicityId", "Ethnictiy", client.EthnicityId);
+            ViewBag.ReferralContactId = new SelectList(db.ReferralContacts, "ReferralContactId", "ReferralContactName", client.ReferralContactId);
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
             ViewBag.AbuserRelationshipId = new SelectList(db.AbuserRelationships, "AbuserRelationshipId", "Type", client.AbuserRelationshipId);
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "Repeat", client.RepeatClientId);

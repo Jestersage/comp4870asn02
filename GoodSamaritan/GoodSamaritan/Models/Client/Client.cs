@@ -62,11 +62,11 @@ namespace GoodSamaritan.Models.Client
         public int AssignedWorkerId { get; set; }
         public virtual AssignedWorker AssignedWorker { get; set; }
 
-        public string Source { get; set; }
+        public int ReferralSourceId { get; set; }
         public virtual ReferralSource ReferralSource { get; set; }
 
         //public string ReferralContactName { get; set; }
-        public int ReferralSourceId { get; set; }
+        public int ReferralContactId { get; set; }
         public virtual ReferralContact ReferralContact { get; set; }
 
         //public string IncidentType { get; set; }
@@ -88,8 +88,11 @@ namespace GoodSamaritan.Models.Client
         //public string Status { get; set; }
         public int FamilyViolenceFileId { get; set; }
         public virtual FamilyViolenceFile File { get; set; }
+
         //char Gender //(M, F, Trans) Lookup too??
-        public char Gender { get; set; }
+
+        [RegularExpression(@"m|M|f|F|t|T", ErrorMessage = "Please use m/f/t for gender")]
+        public string Gender { get; set; }
 
         //public string Ethnictiy { get; set; }
         public int EthnicityId { get; set; }

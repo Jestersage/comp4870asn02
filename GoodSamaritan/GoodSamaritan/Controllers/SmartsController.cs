@@ -11,6 +11,7 @@ using GoodSamaritan.Models.Smart;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class SmartsController : Controller
     {
         private ClientContext db = new ClientContext();

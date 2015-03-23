@@ -7,3 +7,9 @@ add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.C
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "NewCreate"
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
+
+=================================================================================================
+
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigrations.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigrations.Configuration

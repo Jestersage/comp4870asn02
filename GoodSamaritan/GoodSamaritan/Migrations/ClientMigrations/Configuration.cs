@@ -144,7 +144,6 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   refc => refc.ReferralContactName,
                   new ReferralContact { ReferralContactName = "PBVS" },
                   new ReferralContact { ReferralContactName = "MCFD" },
-                  new ReferralContact { ReferralContactName = "PBVS" },
                   new ReferralContact { ReferralContactName = "VictimLINK" },
                   new ReferralContact { ReferralContactName = "TH" },
                   new ReferralContact { ReferralContactName = "Self" },

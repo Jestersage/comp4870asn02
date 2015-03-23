@@ -42,6 +42,9 @@
             @Html.DisplayNameFor(model => model.Race.Ethnictiy)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ReferralContact.ReferralContactName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ReferralSource.Source)
         </th>
         <th>
@@ -87,13 +90,13 @@
             @Html.DisplayNameFor(model => model.RiskAccessmentAssignedTo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Source)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.AbuserSurname)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AbuserFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NumChildrenAgeZeroSix)
@@ -149,6 +152,9 @@
             @Html.DisplayFor(modelItem => item.Race.Ethnictiy)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ReferralContact.ReferralContactName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ReferralSource.Source)
         </td>
         <td>
@@ -194,13 +200,13 @@
             @Html.DisplayFor(modelItem => item.RiskAccessmentAssignedTo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Source)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.AbuserSurname)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AbuserFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NumChildrenAgeZeroSix)
