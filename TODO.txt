@@ -1,0 +1,8 @@
+TODO
+From assignment 2:
+* Disable user not implemented
+* No CRUD omn lookup table
+* contents of your drop-down-lists are not visible unless you scroll over them.
+* Validation -- When user enters a blank role there should be a message that indicates that this is not allowed
+* Readme.docs not in Docs folder
+
