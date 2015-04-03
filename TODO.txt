@@ -1,13 +1,16 @@
 TODO
+General
+* Readme.docs not in Docs folder
+
 From assignment 2:
 * Disable user not implemented
-* No CRUD omn lookup table
-* contents of your drop-down-lists are not visible unless you scroll over them.
+* No CRUD on lookup table
 * Validation -- When user enters a blank role there should be a message that indicates that this is not allowed
-* Readme.docs not in Docs folder
 
 From assignment 3:
 * drop down list on data entry page populated from lookup table (DONE?)
+
+
 * Put meaningful content on all pages -- nothign more nothing less!!
 * Role:
 ** Admin: Create, edit, delete data
@@ -22,3 +25,8 @@ From assignment 3:
 * Use WebAPI to expose clientdata
 * Use AngularJS to consume
 * MUST NOT allow user to enter more characters than what's allowed for the field
+
+THERE ARE OTHER REQUIREMENTS
+
+? (May be solved)
+* contents of your drop-down-lists are not visible unless you scroll over them. ???

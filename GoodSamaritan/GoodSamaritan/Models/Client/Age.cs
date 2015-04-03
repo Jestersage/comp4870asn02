@@ -12,5 +12,6 @@ namespace GoodSamaritan.Models.Client
         public int AgeId { get; set; }
         public string AgeRange { get; set; }
         public virtual ICollection<Client> Clients { get; set; }
+        //ICollection create issue for WebAPI but needed for MVC
     }
 }
