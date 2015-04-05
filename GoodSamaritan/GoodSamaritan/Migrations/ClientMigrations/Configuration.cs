@@ -372,6 +372,23 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             );
             context.SaveChanges();
 
+            context.HospitalAtts.AddOrUpdate(
+                  hoa=> hoa.HospitalAttName,
+                  new HospitalAtt { HospitalAttName = "Abbotsford Regional Hospital" },
+                  new HospitalAtt { HospitalAttName = "Surrey Memorial Hospital" },
+                  new HospitalAtt { HospitalAttName = "Burnaby Hospital" },
+                  new HospitalAtt { HospitalAttName = "Chilliwack General Hospital" },
+                  new HospitalAtt { HospitalAttName = "Delta Hospital" },
+                  new HospitalAtt { HospitalAttName = "Eagle Ridge Hospital" },
+                  new HospitalAtt { HospitalAttName = "Fraser Canyon Hospital" },
+                  new HospitalAtt { HospitalAttName = "Langley Hospital" },
+                  new HospitalAtt { HospitalAttName = "Mission Hospital" },
+                  new HospitalAtt { HospitalAttName = "Peace Arch Hospital" },
+                  new HospitalAtt { HospitalAttName = "Ridge Meadows Hospital" },
+                  new HospitalAtt { HospitalAttName = "Royal Columbia Hospital" }
+            );
+            context.SaveChanges();
+
             context.SocialWorkAttendances.AddOrUpdate(
                   swa => swa.SocialWorkAttendanceValue,
                   new SocialWorkAttendance { SocialWorkAttendanceValue = "Yes" },
