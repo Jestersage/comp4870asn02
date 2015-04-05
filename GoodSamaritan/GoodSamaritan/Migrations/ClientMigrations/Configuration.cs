@@ -321,6 +321,34 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new City { CityName = "International" }
             );
             context.SaveChanges();
+            
+            context.CityRes.AddOrUpdate(
+                  ctr => ctr.CityResName,
+                  new CityRes { CityResName = "Surrey" },
+                  new CityRes { CityResName = "Abbotsford" },
+                  new CityRes { CityResName = "Agassiz" },
+                  new CityRes { CityResName = "Boston Bar" },
+                  new CityRes { CityResName = "Burnaby" },
+                  new CityRes { CityResName = "Chilliwack" },
+                  new CityRes { CityResName = "Coquitlam" },
+                  new CityRes { CityResName = "Delta" },
+                  new CityRes { CityResName = "Harrison Hot Springs" },
+                  new CityRes { CityResName = "Hope" },
+                  new CityRes { CityResName = "Langley" },
+                  new CityRes { CityResName = "Maple Ridge" },
+                  new CityRes { CityResName = "Mission" },
+                  new CityRes { CityResName = "New Westminster" },
+                  new CityRes { CityResName = "Pitt Meadows" },
+                  new CityRes { CityResName = "Port Coquitlam" },
+                  new CityRes { CityResName = "Port Moody" },
+                  new CityRes { CityResName = "Vancouver" },
+                  new CityRes { CityResName = "White Rock" },
+                  new CityRes { CityResName = "Yale" },
+                  new CityRes { CityResName = "Other – BC" },
+                  new CityRes { CityResName = "Out-of-Province" },
+                  new CityRes { CityResName = "International" }
+            );
+            context.SaveChanges();
 
             //Abbotsford Regional Hospital; Surrey Memorial Hospital; 
             //Burnaby Hospital; Chilliwack General Hospital; Delta Hospital;
