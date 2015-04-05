@@ -10,7 +10,7 @@ using GoodSamaritan.Models.Client;
 
 namespace GoodSamaritan.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Worker")]
     public class ClientsController : Controller
     {
         private ClientContext db = new ClientContext();

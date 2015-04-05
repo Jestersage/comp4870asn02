@@ -178,8 +178,6 @@
     <Compile Include="Controllers\AgesController.cs" />
     <Compile Include="Controllers\API\AbuserRelationshipsController.cs" />
     <Compile Include="Controllers\API\AgesController.cs" />
-    <Compile Include="Controllers\API\AssignedWorkersController.cs" />
-    <Compile Include="Controllers\API\BadDateReportsController.cs" />
     <Compile Include="Controllers\AssignedWorkersController.cs" />
     <Compile Include="Controllers\BadDateReportsController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
@@ -526,6 +524,7 @@
     <Content Include="Views\Role\RoleIndex.cshtml" />
     <Content Include="Views\Role\RoleAddToUser.cshtml" />
     <Content Include="Views\Role\RoleCreate.cshtml" />
+    <Content Include="Views\Role\DisableUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

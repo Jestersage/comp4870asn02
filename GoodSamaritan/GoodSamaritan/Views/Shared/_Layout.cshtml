@@ -23,20 +23,17 @@
                 <ul class="nav navbar-nav">
                     @if (Session["Worker"] != null)
                     {
-                        <li>@Html.ActionLink("Enter Report", "Index", "Clients")</li>
-                        <li>@Html.ActionLink("SMART Data", "Index", "Smarts")</li>
+                        <li>@Html.ActionLink("Client Data", "Index", "Clients")</li>
                     }
-                    @if (Session["Reporter"] != null)
+                    @if (Session["Report"] != null)
                     {
-                        <li>@Html.ActionLink("Enter Report", "Index", "Clients")</li>
-                        <li>@Html.ActionLink("SMART Data", "Index", "Smarts")</li>
                     }
                     @if (Session["Admin"] != null)
                     {
 
-                        <li>@Html.ActionLink("Manage Roles", "RoleIndex", "Role")</li>
-                        <li>@Html.ActionLink("Enter Report", "Index", "Clients")</li>
-                        <li>@Html.ActionLink("SMART Data", "Index", "Smarts")</li>
+                        <li>@Html.ActionLink("Roles & Users", "RoleIndex", "Role")</li>
+                        <li>@Html.ActionLink("Client Data", "Index", "Clients")</li>
+                        <li>@Html.ActionLink("Smart Data", "Index", "Smarts")</li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lookup Lists<b class="caret"></b></a>
                             <ul class="dropdown-menu scrollable-menu" style="height:auto; max-height:300px; overflow-x:hidden">

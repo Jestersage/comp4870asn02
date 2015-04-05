@@ -91,9 +91,9 @@ namespace GoodSamaritan.Controllers
                     Session["Worker"] = "Worker";
                 }
 
-                if (UserManager.IsInRole(user.Id, "Reporter"))
+                if (UserManager.IsInRole(user.Id, "Report"))
                 {
-                    Session["Reporter"] = "Reporter";
+                    Session["Report"] = "Report";
                 }
             }
 
@@ -413,7 +413,11 @@ namespace GoodSamaritan.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
+            Session["Admin"] = null;
+            Session["Worker"] = null;
+            Session["Report"] = null;
             return RedirectToAction("Index", "Home");
+         
         }
 
         //

@@ -49,14 +49,18 @@ namespace GoodSamaritan.Migrations.ClientMigrations
              * */
 
             List<FiscalYear> FiscalYears = new List<FiscalYear>() {
-                //10-11; 11-12; 12-13; 13-14; 14-15; 15-16; 16-17
-                new FiscalYear { FiscalYearName="10-11" },
-                new FiscalYear { FiscalYearName="11-12" },
-                new FiscalYear { FiscalYearName="12-13" },
-                new FiscalYear { FiscalYearName="13-14" },
-                new FiscalYear { FiscalYearName="14-15" },
-                new FiscalYear { FiscalYearName="15-16" },
-                new FiscalYear { FiscalYearName="16-17" }
+                new FiscalYear { 
+                  //10-11; 11-12; 12-13; 13-14; 14-15; 15-16; 16-17
+                FiscalYearName="10-11",
+                },
+                new FiscalYear { 
+                  //10-11; 11-12; 12-13; 13-14; 14-15; 15-16; 16-17
+                FiscalYearName="11-12",
+                },
+                new FiscalYear { 
+                  //10-11; 11-12; 12-13; 13-14; 14-15; 15-16; 16-17
+                FiscalYearName="12-13",
+                },
               };
 
             context.FiscalYears.AddOrUpdate(
@@ -318,34 +322,6 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             );
             context.SaveChanges();
 
-            context.CityRes.AddOrUpdate(
-                 ctr => ctr.CityResName,
-                 new CityRes { CityResName = "Surrey" },
-                 new CityRes { CityResName = "Abbotsford" },
-                 new CityRes { CityResName = "Agassiz" },
-                 new CityRes { CityResName = "Boston Bar" },
-                 new CityRes { CityResName = "Burnaby" },
-                 new CityRes { CityResName = "Chilliwack" },
-                 new CityRes { CityResName = "Coquitlam" },
-                 new CityRes { CityResName = "Delta" },
-                 new CityRes { CityResName = "Harrison Hot Springs" },
-                 new CityRes { CityResName = "Hope" },
-                 new CityRes { CityResName = "Langley" },
-                 new CityRes { CityResName = "Maple Ridge" },
-                 new CityRes { CityResName = "Mission" },
-                 new CityRes { CityResName = "New Westminster" },
-                 new CityRes { CityResName = "Pitt Meadows" },
-                 new CityRes { CityResName = "Port Coquitlam" },
-                 new CityRes { CityResName = "Port Moody" },
-                 new CityRes { CityResName = "Vancouver" },
-                 new CityRes { CityResName = "White Rock" },
-                 new CityRes { CityResName = "Yale" },
-                 new CityRes { CityResName = "Other – BC" },
-                 new CityRes { CityResName = "Out-of-Province" },
-                 new CityRes { CityResName = "International" }
-           );
-            context.SaveChanges();
-
             //Abbotsford Regional Hospital; Surrey Memorial Hospital; 
             //Burnaby Hospital; Chilliwack General Hospital; Delta Hospital;
             //Eagle Ridge Hospital; Fraser Canyon Hospital; Langley Hospital;
@@ -365,23 +341,6 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   new Hospital { HospitalName = "Peace Arch Hospital" },
                   new Hospital { HospitalName = "Ridge Meadows Hospital" },
                   new Hospital { HospitalName = "Royal Columbia Hospital" }
-            );
-            context.SaveChanges();
-
-            context.HospitalAtts.AddOrUpdate(
-                  hAtt => hAtt.HospitalAttName,
-                  new HospitalAtt { HospitalAttName = "Abbotsford Regional Hospital" },
-                  new HospitalAtt { HospitalAttName = "Surrey Memorial Hospital" },
-                  new HospitalAtt { HospitalAttName = "Burnaby Hospital" },
-                  new HospitalAtt { HospitalAttName = "Chilliwack General Hospital" },
-                  new HospitalAtt { HospitalAttName = "Delta Hospital" },
-                  new HospitalAtt { HospitalAttName = "Eagle Ridge Hospital" },
-                  new HospitalAtt { HospitalAttName = "Fraser Canyon Hospital" },
-                  new HospitalAtt { HospitalAttName = "Langley Hospital" },
-                  new HospitalAtt { HospitalAttName = "Mission Hospital" },
-                  new HospitalAtt { HospitalAttName = "Peace Arch Hospital" },
-                  new HospitalAtt { HospitalAttName = "Ridge Meadows Hospital" },
-                  new HospitalAtt { HospitalAttName = "Royal Columbia Hospital" }
             );
             context.SaveChanges();
 

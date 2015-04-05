@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,6 +12,146 @@ namespace GoodSamaritan.Controllers.Role
 {
     public class RoleController : Controller
     {
+        [Authorize(Roles = "Administrator")]
+        public ActionResult DisableUser()
+        {
+            List<string> users;
+            List<string> enabledUsers;
+            List<string> disabledUsers;
+            using (var ctx = new ApplicationDbContext())
+            {
+                var userStore = new UserStore<ApplicationUser>(ctx);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+                users = (from u in userManager.Users select u.UserName).ToList();
+                disabledUsers = new List<string>(users);
+                enabledUsers = new List<string>(users);
+                foreach (var user in users)
+                {
+                    if (!userManager.FindByName(user).LockoutEnabled)
+                    {
+                        disabledUsers.Remove(user);
+                    }
+                    else
+                    {
+                        enabledUsers.Remove(user);
+                    }
+                }
+                ViewBag.EnabledUsers = new SelectList(enabledUsers);
+                ViewBag.DisabledUsers = new SelectList(disabledUsers);
+            }
+            return View();
+        }
+
+        [Authorize(Roles = "Administrator")]
+        [HttpPost]
+        public async Task<ActionResult> DisableUser(string userName)
+        {
+
+   
+            List<string> users;
+            List<string> enabledUsers;
+            List<string> disabledUsers;
+            using (var context = new ApplicationDbContext())
+            {
+
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+
+                var selectedUser = userManager.FindByName(userName);
+
+                if (selectedUser == null)
+                    throw new Exception("User not found!");
+
+                if (!selectedUser.UserName.Equals("adam@gs.ca"))
+                {
+
+
+                    if (!selectedUser.LockoutEnabled)
+                    {
+                        userManager.SetLockoutEnabled(selectedUser.Id, true);
+                        DateTime lockoutDate = DateTime.Now.AddYears(50);
+                        await userManager.SetLockoutEndDateAsync(selectedUser.Id, lockoutDate);
+                        context.SaveChanges();
+                        userManager.Update(selectedUser);
+                        ViewBag.ResultMessage = "Disabled successfully !";
+
+                    }
+                }
+                else
+                {
+                    ViewBag.ResultMessage = "Cannot disable Admin";
+                }
+
+                users = (from u in userManager.Users select u.UserName).ToList();
+                disabledUsers = new List<string>(users);
+                enabledUsers = new List<string>(users);
+                foreach (var user in users)
+                {
+                    if (!userManager.FindByName(user).LockoutEnabled)
+                    {
+                        disabledUsers.Remove(user);
+                    }
+                    else
+                    {
+                        enabledUsers.Remove(user);
+                    }
+                }
+            }
+
+            ViewBag.EnabledUsers = new SelectList(enabledUsers);
+            ViewBag.DisabledUsers = new SelectList(disabledUsers);
+            return View();
+        }
+
+        [Authorize(Roles = "Administrator")]
+        [HttpPost]
+        public ActionResult EnableUser(string userName)
+        {
+
+            List<string> users;
+            List<string> enabledUsers;
+            List<string> disabledUsers;
+            using (var context = new ApplicationDbContext())
+            {
+
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+
+                var selectedUser = userManager.FindByName(userName);
+                if (selectedUser == null)
+                    throw new Exception("User not found!");
+                if (selectedUser.LockoutEnabled)
+                {
+                    userManager.SetLockoutEnabled(selectedUser.Id, false);
+                    context.SaveChanges();
+                    userManager.Update(selectedUser);
+
+
+                }
+
+
+                users = (from u in userManager.Users select u.UserName).ToList();
+                disabledUsers = new List<string>(users);
+                enabledUsers = new List<string>(users);
+                foreach (var user in users)
+                {
+                    if (!userManager.FindByName(user).LockoutEnabled)
+                    {
+                        disabledUsers.Remove(user);
+                    }
+                    else
+                    {
+                        enabledUsers.Remove(user);
+                    }
+                }
+            }
+            ViewBag.ResultMessage = "Enabled successfully !";
+            ViewBag.EnabledUsers = new SelectList(enabledUsers);
+            ViewBag.DisabledUsers = new SelectList(disabledUsers);
+            return View("DisableUser");
+        }
+
+
         [Authorize(Roles = "Administrator")]
         public ActionResult RoleCreate()
         {
@@ -22,17 +163,24 @@ namespace GoodSamaritan.Controllers.Role
         [ValidateAntiForgeryToken]
         public ActionResult RoleCreate(string roleName)
         {
-            using (var context = new ApplicationDbContext())
+            if (roleName != "")
             {
-                var roleStore = new RoleStore<IdentityRole>(context);
-                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                using (var context = new ApplicationDbContext())
+                {
+                    var roleStore = new RoleStore<IdentityRole>(context);
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
 
-                roleManager.Create(new IdentityRole(roleName));
-                context.SaveChanges();
+                    roleManager.Create(new IdentityRole(roleName));
+                    context.SaveChanges();
+                }
+
+                ViewBag.ResultMessage = "Role created successfully !";
+                return RedirectToAction("RoleIndex", "Role");
+
             }
 
-            ViewBag.ResultMessage = "Role created successfully !";
-            return RedirectToAction("RoleIndex", "Role");
+            ViewBag.ResultMessage = "Cannot create empty role name";
+            return View("RoleCreate");
         }
 
         [Authorize(Roles = "Administrator")]
@@ -53,18 +201,25 @@ namespace GoodSamaritan.Controllers.Role
         [Authorize(Roles = "Administrator")]
         public ActionResult RoleDelete(string roleName)
         {
-            using (var context = new ApplicationDbContext())
+            if (roleName != "Administrator")
             {
-                var roleStore = new RoleStore<IdentityRole>(context);
-                var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = roleManager.FindByName(roleName);
+                using (var context = new ApplicationDbContext())
+                {
+                    var roleStore = new RoleStore<IdentityRole>(context);
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    var role = roleManager.FindByName(roleName);
 
-                roleManager.Delete(role);
-                context.SaveChanges();
+                    roleManager.Delete(role);
+                    context.SaveChanges();
+                }
+
+                ViewBag.ResultMessage = "Role deleted succesfully !";
+                return RedirectToAction("RoleIndex", "Role");
             }
 
-            ViewBag.ResultMessage = "Role deleted succesfully !";
-            return RedirectToAction("RoleIndex", "Role");
+
+             ViewBag.ResultMessage = "Can't delete Admin!";
+             return RedirectToAction("RoleIndex", "Role");
         }
 
         [Authorize(Roles = "Administrator")]
