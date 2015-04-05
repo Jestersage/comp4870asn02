@@ -179,6 +179,10 @@
     <Compile Include="Controllers\API\AbuserRelationshipsController.cs" />
     <Compile Include="Controllers\API\AgesController.cs" />
     <Compile Include="Controllers\API\AssignedWorkersController.cs" />
+    <Compile Include="Controllers\API\BadDateReportsController.cs" />
+    <Compile Include="Controllers\API\CitiesController.cs" />
+    <Compile Include="Controllers\API\CityResController.cs" />
+    <Compile Include="Controllers\API\ClientsController.cs" />
     <Compile Include="Controllers\AssignedWorkersController.cs" />
     <Compile Include="Controllers\BadDateReportsController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
