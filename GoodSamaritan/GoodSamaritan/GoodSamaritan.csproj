@@ -184,6 +184,13 @@
     <Compile Include="Controllers\API\CityResController.cs" />
     <Compile Include="Controllers\API\ClientsController.cs" />
     <Compile Include="Controllers\API\CrisesController.cs" />
+    <Compile Include="Controllers\API\DrugFacilitatedAssaultsController.cs" />
+    <Compile Include="Controllers\API\DuplicateFilesController.cs" />
+    <Compile Include="Controllers\API\EthnicitiesController.cs" />
+    <Compile Include="Controllers\API\EvidenceStoredsController.cs" />
+    <Compile Include="Controllers\API\FamilyViolenceFilesController.cs" />
+    <Compile Include="Controllers\API\FileStatusController.cs" />
+    <Compile Include="Controllers\API\FiscalYearsController.cs" />
     <Compile Include="Controllers\AssignedWorkersController.cs" />
     <Compile Include="Controllers\BadDateReportsController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
