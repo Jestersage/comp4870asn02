@@ -191,6 +191,14 @@
     <Compile Include="Controllers\API\FamilyViolenceFilesController.cs" />
     <Compile Include="Controllers\API\FileStatusController.cs" />
     <Compile Include="Controllers\API\FiscalYearsController.cs" />
+    <Compile Include="Controllers\API\HIVMedsController.cs" />
+    <Compile Include="Controllers\API\HospitalAttsController.cs" />
+    <Compile Include="Controllers\API\HospitalsController.cs" />
+    <Compile Include="Controllers\API\IncidentsController.cs" />
+    <Compile Include="Controllers\API\MedicalOnliesController.cs" />
+    <Compile Include="Controllers\API\MultiplePerpetratorsController.cs" />
+    <Compile Include="Controllers\API\PoliceAttendancesController.cs" />
+    <Compile Include="Controllers\API\PoliceReportedsController.cs" />
     <Compile Include="Controllers\AssignedWorkersController.cs" />
     <Compile Include="Controllers\BadDateReportsController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
