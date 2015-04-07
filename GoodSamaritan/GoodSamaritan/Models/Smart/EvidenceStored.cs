@@ -12,6 +12,7 @@ namespace GoodSamaritan.Models.Smart
 
         public int EvidenceStoredId { get; set; }
         public string EvidenceStoredValue { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

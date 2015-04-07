@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Smart
     {
         public int ReferCBVSId { get; set; }
         public string ReferCBVSValue { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace GoodSamaritan.Models.Client
     {
         public int AgeId { get; set; }
         public string AgeRange { get; set; }
+        
+        [JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
         //ICollection create issue for WebAPI but needed for MVC
     }

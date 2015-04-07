@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Client
     {
         public int RepeatClientId { get; set; }
         public string Repeat { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

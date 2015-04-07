@@ -12,6 +12,7 @@ namespace GoodSamaritan.Models.Client
         public int FamilyViolenceFileId { get; set; }
         //Yes; No or N/A
         public string Status { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

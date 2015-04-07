@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Smart
     {
         public int MultiplePerpetratorId { get; set; }
         public string MultiplePerpetratorValue { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

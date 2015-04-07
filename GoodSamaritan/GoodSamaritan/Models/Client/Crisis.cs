@@ -13,6 +13,7 @@ namespace GoodSamaritan.Models.Client
 
         //Call; Accompaniment; Drop-In
         public string CrisisName { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

@@ -9,8 +9,6 @@ From assignment 2:
 
 From assignment 3:
 * drop down list on data entry page populated from lookup table (DONE?)
-
-
 * Put meaningful content on all pages -- nothign more nothing less!!
 * Role:
 ** Admin: Create, edit, delete data
@@ -30,3 +28,7 @@ THERE ARE OTHER REQUIREMENTS
 
 ? (May be solved)
 * contents of your drop-down-lists are not visible unless you scroll over them. ???
+
+
+Notes
+* resolve icollection issue by using annotation  [JsonIgnore] or [Newtonsoft.Json.JsonIgnore]

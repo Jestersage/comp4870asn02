@@ -12,7 +12,7 @@ namespace GoodSamaritan.Models.Client
         public int RiskLevelId { get; set; }
 
         public string RiskLevelValue { get; set; }
-
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
         //High; DVU; null
     }

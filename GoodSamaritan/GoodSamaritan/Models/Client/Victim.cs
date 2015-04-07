@@ -12,7 +12,7 @@ namespace GoodSamaritan.Models.Client
         public int VictimId {get; set;}
         //primary or secondary
         public string VictimType { get; set; }
-
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

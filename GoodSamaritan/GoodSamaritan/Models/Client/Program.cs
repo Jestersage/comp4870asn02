@@ -14,6 +14,7 @@ namespace GoodSamaritan.Models.Client
         //Crisis; Court; SMART; DVU; MCFD
         //If Program == SMART, ref Smart
         public string ProgramName { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

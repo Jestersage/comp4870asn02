@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Client
     {
         public int ReferralSourceId { get; set; }
         public string Source { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

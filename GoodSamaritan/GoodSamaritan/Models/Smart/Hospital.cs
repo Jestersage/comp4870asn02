@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Smart
     {
         public int HospitalId { get; set; }
         public string HospitalName { get; set; }
+       [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace GoodSamaritan.Models.Client
         //Multiple Perps; N/A; Other; Other Familial; Parent; Partner; Sibling; Stranger
         public string Type { get; set; }
 
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

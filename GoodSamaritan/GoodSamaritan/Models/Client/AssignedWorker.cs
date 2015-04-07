@@ -13,6 +13,7 @@ namespace GoodSamaritan.Models.Client
 
         //Michelle; Tyra; Louise; Angela; Dave; Troy; Michael; Manpreet; Patrick; None
         public string AssignedWorkerName { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

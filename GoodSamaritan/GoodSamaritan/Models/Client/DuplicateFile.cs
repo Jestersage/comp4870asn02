@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Client
     {
         public int DuplicateFileId { get; set; }
         public string IsDuplicate { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

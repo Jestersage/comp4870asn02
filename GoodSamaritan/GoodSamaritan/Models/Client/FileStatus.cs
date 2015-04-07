@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Client
     {
         public int FileStatusId { get; set; }
         public string FileStatusString { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

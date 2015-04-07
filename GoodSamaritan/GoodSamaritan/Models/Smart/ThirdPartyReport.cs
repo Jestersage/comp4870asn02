@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Smart
     {
         public int ThirdPartyReportId { get; set; }
         public string ThirdPartyReportValue { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

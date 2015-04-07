@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Smart
     {
         public int PoliceReportedId { get; set; }
         public string PoliceReportedValue { get; set; }
+       [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

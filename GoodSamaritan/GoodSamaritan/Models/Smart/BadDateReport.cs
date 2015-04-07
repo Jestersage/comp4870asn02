@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Smart
     {
         public int BadDateReportId { get; set; }
         public string BadDateReportValue { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Smart> Smarts { get; set; }
     }
 }

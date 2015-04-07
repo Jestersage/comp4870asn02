@@ -11,6 +11,7 @@ namespace GoodSamaritan.Models.Client
     {
         public int EthnicityId { get; set; }
         public string Ethnictiy { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }

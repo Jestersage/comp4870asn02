@@ -13,6 +13,7 @@ namespace GoodSamaritan.Models.Client
         //File; N/A 
         //(Defaults to ‘File’ if SWC exists, ‘N/A’ if SWC is blank)
         public string ServiceName { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public virtual ICollection<Client> Clients { get; set; }
     }
 }
