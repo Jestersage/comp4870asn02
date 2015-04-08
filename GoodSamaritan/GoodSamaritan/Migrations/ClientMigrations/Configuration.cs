@@ -228,10 +228,10 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             //Adult >24 <65; Youth >12 <19; Youth >18 <25; Child<13; Senior >64
             context.Ages.AddOrUpdate(
                  ag => ag.AgeRange,
-                 new Age { AgeRange = "Adult >24 <65" },
-                 new Age { AgeRange = "Youth >18 <25" },
-                 new Age { AgeRange = "Youth >12 <19" },
-                 new Age { AgeRange = "Child <13" },
+                 new Age { AgeRange = "Adult  >24 <65" },
+                 new Age { AgeRange = "Youth  >18 <25" },
+                 new Age { AgeRange = "Youth  >12 <19" },
+                 new Age { AgeRange = "Child  <13" },
                  new Age { AgeRange = "Senior >64" }
             );
             context.SaveChanges();

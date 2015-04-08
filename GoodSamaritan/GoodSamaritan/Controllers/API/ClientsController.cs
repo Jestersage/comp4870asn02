@@ -19,7 +19,8 @@ namespace GoodSamaritan.Controllers.API
         // GET: api/Clients
         public IQueryable<Client> GetClients()
         {
-            return db.Clients;
+            var clients = db.Clients.Include(c => c.age).Include(c => c.AssignedWorker).Include(c => c.Crisis).Include(c => c.DuplicateFile).Include(c => c.File).Include(c => c.FileStatuse).Include(c => c.FiscalYear).Include(c => c.Incident).Include(c => c.Program).Include(c => c.Race).Include(c => c.ReferralContact).Include(c => c.ReferralSource).Include(c => c.Relationship).Include(c => c.RepeatClient).Include(c => c.RiskLevel).Include(c => c.RiskStatus).Include(c => c.Serivce).Include(c => c.VictimOfIncident);
+            return clients;
         }
 
         // GET: api/Clients/5
