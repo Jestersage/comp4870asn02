@@ -12,11 +12,15 @@
 
 
     <div>
-        <div>Name: {{ user.name }}</div>
-        <div>Location: {{ user.location }}</div>
+        <ul>
+            <li ng-repeat="x in user">
+                {{ x.FirstName + ', ' + x.Surname }}
+            </li>
+        </ul>
+
         <div>
             {{dump}}
-            <img data-ng-src="{{ user.avatar_url }}" title="{{ user.name }}" />
+
         </div>
     </div>
 </body>
