@@ -14,7 +14,24 @@
     <div>
         <ul>
             <li ng-repeat="x in user">
-                {{ x.FirstName + ', ' + x.Surname }}
+                {{
+ x.$id  + ', '
+          + x.FiscalYear.FiscalYearName + ', '
+          + x.Month + ', '
+          + x.Day + ', '
+          + x.Surname + ', '
+          + x.FirstName + ', '
+          + x.PoliceFileNum +', '
+          + x.CourtFileNum + ', '
+          + x.SWCFileNum + ', '
+          + x.RiskLevel.RiskLevelValue + ', '
+          + x.Crisis.CrisisName + ', '
+          + x.Service.ServiceName + ', '
+          + x.Program.ProgramName + ', '
+          + x.RiskAccessmentAssignedTo + ', '
+          + x.RiskStatusId + ', '
+          + x.age.AgeRange + ', '
+                }}
             </li>
         </ul>
 
