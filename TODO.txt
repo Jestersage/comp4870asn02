@@ -24,11 +24,18 @@ From assignment 3:
 * Use AngularJS to consume
 * MUST NOT allow user to enter more characters than what's allowed for the field
 
-THERE ARE OTHER REQUIREMENTS
+==Report generation==
+*ASP.NET AJAX (Omeed)
+**Generate report based on Excel
+**a menu item on your home page that leads to a page that generates ad-hoc filtered reports using ASP.NET MVC
+
+*AngularJS (George)
+**Generate report based on Excel
+**create a plain old Report.html page that generates the same ad-hoc filtered reports as above using AngularJS. Report.html can be run from a client machine that uses CORS & authentication to communicate with your WebAPI service on Azure. In addition, Report.html can be run on the server at the root directory of your site.
 
 ? (May be solved)
 * contents of your drop-down-lists are not visible unless you scroll over them. ???
 
 
 Notes
-* resolve icollection issue by using annotation  [JsonIgnore] or [Newtonsoft.Json.JsonIgnore]
+* resolve icollection issue by using annotation  [JsonIgnore] or [Newtonsoft.Json.JsonIgnore] on ICollection
