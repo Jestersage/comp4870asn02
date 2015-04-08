@@ -1,4 +1,8 @@
 TODO
+Recheck
+* For client, Date closed and date reopen is required. Is that right?
+
+
 General
 * Readme.docs not in Docs folder
 
@@ -14,6 +18,7 @@ From assignment 3:
 ** Admin: Create, edit, delete data
 ** Worker: Create, edit, delete data
 ** Others: No Create, edit, delete data
+** Anonymous users do not see content they do not have access to 
 * Program == start: 
 ** additional SMART ENTITY are captured
 * More than one record per person, with new SWC file number
