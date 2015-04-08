@@ -1,15 +1,4 @@
-﻿var app = angular.module('plunker', []);
-
-app.controller('MainCtrl', function ($scope) {
-    $scope.name = 'World';
-});
-
-app.controller('ClientController', function ($scope, $http) {
-    $http.get("/api/Client")
-      .success(function (response) { $scope.clients = response; });
-});
-
-var app = angular.module('myApp', []);
+﻿var app = angular.module('myApp', []);
 
 app.controller('MainController', function ($scope, $http) {
     var onUserComplete = function (response) {
