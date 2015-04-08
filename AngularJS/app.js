@@ -30,8 +30,8 @@ app.controller('MainController', function ($scope, $http) {
 
 app.controller('ClientController', function ($scope, $http) {
 
-    var onUserComplete = function (response) {
-        $scope.user = response.data;
+    var onClientComplete = function (response) {
+        $scope.user = response;
     };
 
     var onError = function (reason) {
@@ -39,9 +39,7 @@ app.controller('ClientController', function ($scope, $http) {
         //$scope.error = reason;
     };
 
-    var promise = $http.get("/api/Client");
-    promise.success(function (response) {
-        $scope.clients = response.data;
-    });
+    $http.get("http://a3.georgeleung.com/api/Clients")
+      .then(onClientComplete, onError);
 
 });
