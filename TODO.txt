@@ -17,8 +17,11 @@ From assignment 3:
 * Role:
 ** Admin: Create, edit, delete data
 ** Worker: Create, edit, delete data
+*** Users with Worker role cannot see menu items that relate to roles, users, and lookup tables
 ** Others: No Create, edit, delete data
 ** Anonymous users do not see content they do not have access to 
+** Able to view reports as reporter using rob@gs.ca and password P@$$w0rd
+*** can only see menu items that relate to reports.
 * Program == start: 
 ** additional SMART ENTITY are captured
 * More than one record per person, with new SWC file number
@@ -38,8 +41,18 @@ From assignment 3:
 **Generate report based on Excel
 **create a plain old Report.html page that generates the same ad-hoc filtered reports as above using AngularJS. Report.html can be run from a client machine that uses CORS & authentication to communicate with your WebAPI service on Azure. In addition, Report.html can be run on the server at the root directory of your site.
 
+Report.html placed in site root directory
+Reports can be generated on a remote client desktop/laptop by loading Report.html, and all its dependencies (*.js, *.css, & *.html) in Visual Studio on a client desktop/laptop computer. 
+Report filters based on month & year generate correct reports
+Reports look professional
+
+
 ? (May be solved)
 * contents of your drop-down-lists are not visible unless you scroll over them. ???
+
+==API side situation==
+*Lookup table okay
+*Unable to load all clients, but can call specific clients by api/Clients/n where n is the number
 
 
 Notes

@@ -233,7 +233,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                  new Age { AgeRange = "Adult >24 <65" },
                  new Age { AgeRange = "Youth >18 <25" },
                  new Age { AgeRange = "Youth >12 <19" },
-                 new Age { AgeRange = "Child<13" },
+                 new Age { AgeRange = "Child < 13" },
                  new Age { AgeRange = "Senior >64" }
             );
             context.SaveChanges();
@@ -254,8 +254,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
             context.FileStatus.AddOrUpdate(
                  files => files.FileStatusString,
-                 new FileStatus { FileStatusString = "Yes" },
-                 new FileStatus { FileStatusString = "" }
+                 new FileStatus { FileStatusString = "Reopened" },
+                 new FileStatus { FileStatusString = "Closed" },
+                 new FileStatus { FileStatusString = "Open" }
             );
             context.SaveChanges();
 
