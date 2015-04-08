@@ -19,9 +19,9 @@ namespace GoodSamaritan.Controllers.API
         // GET: api/Clients
         public IQueryable<Client> GetClients()
         {
-            return db.Clients;
-            //return db.Clients
-            //    .Include
+            //return db.Clients;
+            return db.Clients
+                .Include("Ages"); ;
         }
 
         // GET: api/Clients/5

@@ -91,10 +91,8 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                   pro => pro.ProgramName,
                   new Program { ProgramName = "Crisis" },
                   new Program { ProgramName = "Court" },
-                  
                   new Program { ProgramName = "SMART" },
                   new Program { ProgramName = "DVU" },
-                      
                   new Program { ProgramName = "MCFD" }
             );
             context.SaveChanges();
@@ -233,7 +231,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                  new Age { AgeRange = "Adult >24 <65" },
                  new Age { AgeRange = "Youth >18 <25" },
                  new Age { AgeRange = "Youth >12 <19" },
-                 new Age { AgeRange = "Child < 13" },
+                 new Age { AgeRange = "Child <13" },
                  new Age { AgeRange = "Senior >64" }
             );
             context.SaveChanges();
@@ -260,7 +258,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             );
             context.SaveChanges();
 
+            ////////
             //SMART
+            ////////
             context.SexWorkExploitations.AddOrUpdate(
                   swe => swe.SexWorkExploitationValue,
                   new SexWorkExploitation { SexWorkExploitationValue = "Yes" },
