@@ -26,6 +26,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularJS", "http://localho
 		SlnRelativePath = "..\AngularJS\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumptionClient", "ConsumptionClient\ConsumptionClient.csproj", "{21BDF5A9-E3EF-48DB-A994-91F63BF454EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{087DC1CE-F138-4EE0-9937-E9E3EC82CC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{087DC1CE-F138-4EE0-9937-E9E3EC82CC7D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{087DC1CE-F138-4EE0-9937-E9E3EC82CC7D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{21BDF5A9-E3EF-48DB-A994-91F63BF454EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BDF5A9-E3EF-48DB-A994-91F63BF454EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BDF5A9-E3EF-48DB-A994-91F63BF454EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BDF5A9-E3EF-48DB-A994-91F63BF454EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

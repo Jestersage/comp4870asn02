@@ -251,3 +251,6 @@ C:\Users\omeed\OneDrive\COMP-4870\Assignments\Assignment3_repo\GoodSamaritan\Goo
 C:\Users\omeed\OneDrive\COMP-4870\Assignments\Assignment3_repo\GoodSamaritan\GoodSamaritan\obj\Debug\GoodSamaritan.csproj.GenerateResource.Cache
 C:\Users\omeed\OneDrive\COMP-4870\Assignments\Assignment3_repo\GoodSamaritan\GoodSamaritan\obj\Debug\GoodSamaritan.dll
 C:\Users\omeed\OneDrive\COMP-4870\Assignments\Assignment3_repo\GoodSamaritan\GoodSamaritan\obj\Debug\GoodSamaritan.pdb
+C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.Cors.dll
+C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.Http.Cors.dll
+C:\Users\George\Documents\GitHub\comp4870asn02\GoodSamaritan\GoodSamaritan\bin\System.Web.Http.Cors.xml
