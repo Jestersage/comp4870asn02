@@ -17,7 +17,12 @@ app.controller('ClientController', function ($scope, $http) {
         //$scope.error = reason;
     };
 
-    $http.get("http://a3.georgeleung.com/api/Clients")
+    $scope.search = function () {
+        $http.get("http://a3.georgeleung.com/api/Clients/" + username + "/" + fileStatus)
       .then(onClientComplete, onError);
+    };
+
+    $http.get("http://a3.georgeleung.com/api/Clients")
+       .then(onClientComplete, onError);
 
 });
