@@ -37,8 +37,8 @@ namespace GoodSamaritan.Controllers.API
         }
 
         [ResponseType(typeof(Client))]
-        [Route("api/Clients/{worker:string}/{status:int}")]
-        public IHttpActionResult GetClient(string worker, int status)
+        [Route("api/Clients/{worker:string}/{status:string}")]
+        public IHttpActionResult GetClient(string worker, string status)
         {
             
             Client client = db.Clients.Find();
@@ -47,7 +47,8 @@ namespace GoodSamaritan.Controllers.API
 
             var files = (from f in db.Clients
                          where f.AssignedWorker.AssignedWorkerName == worker
-                         select f.FileStatuse.FileStatusString).ToList();
+                         select f.FileStatuse.FileStatusString)
+                         .ToList();
 
 
            
@@ -56,7 +57,7 @@ namespace GoodSamaritan.Controllers.API
                 return NotFound();
             }
 
-            return Ok(client);
+            return Ok(files);
         }
 
         // PUT: api/Clients/5
