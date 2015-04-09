@@ -36,6 +36,25 @@ namespace GoodSamaritan.Controllers.API
             return Ok(client);
         }
 
+        [ResponseType(typeof(Client))]
+        [Route("api/Clients/{worker:int}/{status:int}")]
+        public IHttpActionResult GetClient(int worker, int status)
+        {
+            
+            
+            Client client = db.Clients.Find();
+            var assignedWorker = worker;
+            var fileStatus = status;
+            
+           
+            if (client == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(client);
+        }
+
         // PUT: api/Clients/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutClient(int id, Client client)
