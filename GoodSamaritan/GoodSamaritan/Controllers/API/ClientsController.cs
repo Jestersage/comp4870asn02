@@ -36,6 +36,7 @@ namespace GoodSamaritan.Controllers.API
             return Ok(client);
         }
 
+        /*
         [ResponseType(typeof(Client))]
         [Route("api/Clients/{worker:string}/{status:string}")]
         public IHttpActionResult GetClient(string worker, string status)
@@ -59,6 +60,7 @@ namespace GoodSamaritan.Controllers.API
 
             return Ok(files);
         }
+        */
 
         // PUT: api/Clients/5
         [ResponseType(typeof(void))]
