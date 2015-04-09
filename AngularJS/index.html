@@ -15,7 +15,7 @@
         <ul>
             <li ng-repeat="x in user">
                 {{
- x.$id  + ', '
+          x.$id  + ', '
           + x.FiscalYear.FiscalYearName + ', '
           + x.Month + ', '
           + x.Day + ', '
@@ -33,6 +33,48 @@
                 }}
             </li>
         </ul>
+
+        <table>
+            <thead class="column">
+            <th scope="col" title="ClientID">Clients Reference Number</th>
+            <th scope="col" title="FiscalYear">Fiscal Year</th>
+            <th scope="col" title="Month">Month</th>
+            <th scope="col" title="Day">Day</th>
+            <th scope="col" title="Program">Program</th>
+            <th scope="col" title="Surname">Surname</th>
+            <th scope="col" title="FirstName">First Name</th>
+            <th scope="col" title="PoliceFileId">Police File No.</th>
+            <th scope="col" title="CourtFileId">Court File No.</th>
+            <th scope="col" title="Service">Service</th>
+            <th scope="col" title="Victim">Victim of Incident</th>
+            <th scope="col" title="File">Family Violence File</th>
+            <th scope="col" title="Gender">Gender</th>
+            <th scope="col" title="Ethnicity">Ethnicity</th>
+            <th scope="col" title="Age">Age</th>
+
+            </thead>
+            <tbody ng-repeat="x in user">
+                <tr>
+                    <td>{{x.$id}}</td>
+                    <td>{{x.FiscalYear.FiscalYearName}}</td>
+                    <td>{{x.Month}}</td>
+                    <td>{{x.Day}}</td>
+                    <td>{{x.Program.ProgramName}}</td>
+
+                    <td>{{x.Surname}}</td>
+                    <td>{{x.FirstName}}</td>
+                    <td>{{x.PoliceFileNum}}</td>
+                    <td>{{x.CourtFileNum}}</td>
+                    <td>{{x.Service.ServiceName}}</td>
+                    <td>{{x.VictimOfIncident.VictimType}}</td>
+                    <td>{{x.File.Status}}</td>
+                    <td>{{x.Gender}}</td>
+                    <td>{{x.Race.Ethnictiy}}</td>
+                    <td>{{x.age.AgeRange}}</td>
+                </tr>
+
+            </tbody>
+        </table>
 
         <div>
 
