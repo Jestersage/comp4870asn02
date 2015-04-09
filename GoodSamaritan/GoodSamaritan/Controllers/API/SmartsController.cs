@@ -20,7 +20,8 @@ namespace GoodSamaritan.Controllers.API
         // GET: api/Smarts
         public IQueryable<Smart> GetSmarts()
         {
-            return db.Smarts;
+            var smarts = db.Smarts.Include(s => s.BadDate).Include(s => s.CityAssault).Include(s => s.CityResidence).Include(s => s.DrugAssault).Include(s => s.Evidence).Include(s => s.Exploitation).Include(s => s.HIVMeds).Include(s => s.HospitalAttended).Include(s => s.MedicalOnly).Include(s => s.MultiPerp).Include(s => s.PoliceAttendence).Include(s => s.PoliceReported).Include(s => s.ReferCBVS).Include(s => s.ReferringHospital).Include(s => s.SocialWorkAttendence).Include(s => s.ThirdParty).Include(s => s.VictimServices);
+            return smarts;
         }
 
         // GET: api/Smarts/5
